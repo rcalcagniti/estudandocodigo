@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>css position practice</title>
+  
+  <style>
+   body {
+     height: 3000px;
+     padding-top: 50px;
+     padding-left: 60px;
+   }
+  
+   .header{
+    height: 50px;
+    width: 200px;
+    position: fixed;
+    background-color: black;
+    color: white;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    }
+  
+  .sidebar {
+    background-color: greenyellow;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    top: 50px;
+    width: 52px;
+  }
+  
+  .absolute {
+    position: absolute;
+    background-color: red;
+    color: white;
+    font-style: bold;
+    right: 10px;
+    top: 60px;
+    z-index: 1;
+  }
+    
+   .div1 {
+     background-color: lightblue;
+     height: 200px
+     width: 200px;
+     position:static;
+   }
+   
+   .div2 {
+     background-color: pink;
+     height: 200px;
+     width: 200px;
+     position: relative;
+   }
+    
+  </style>
+</head>
+
+<body>
+  <div class="header"> header </div>
+  <div class="sidebar"> sidebar
+    <div class="absolute">absolute sidebar</div>
+  </div>
+  <div class="absolute"> absolute </div>
+ <div class="div1"> div 1 </div>
+ <div class="div2"> div 2
+   <div class="absolute">absolute relative</div>
+ </div>
+
+</body>
+
+</html>
