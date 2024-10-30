@@ -1,0 +1,322 @@
+.header {
+  box-sizing: border-box;
+  background-color: gray;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  left: 0;
+  right: 0;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+
+
+.company {
+  margin: 10px 0 5px 20px;
+  font-family: "Protest Guerrilla", sans-serif;
+  font-size: 30px;
+  width: 360px;
+}
+
+/*tentativa menu hamburguer com html,css e js usando: https://github.com/origamid/publico/tree/main/menu-mobile*/
+
+.header ul{
+    margin: 0px;
+    padding: 0px;
+}
+
+.header a{
+    color: black;
+      text-decoration: none;
+      font-family: sans-serif;
+}
+
+.header a:hover {
+    background: lightgray;
+    font-weight: bold;
+}
+
+#menu {
+  margin-top: 8px;
+  display: flex;
+  list-style: none;
+  gap: 0.5rem;
+}
+
+#menu a {
+  display: block;
+  padding: 0.5rem;
+}
+
+#btn-mobile {
+  display: none;
+}
+
+@media (max-width: 780px) {
+  #menu {
+    display: block;
+    position: absolute;
+    width: 100%;
+    top: 70px;
+    right: 0px;
+    background: #e7e7e7;
+    transition: 0.6s;
+    z-index: 1000;
+    height: 0px;
+    visibility: hidden;
+    overflow-y: hidden;
+  }
+  #nav.active #menu {
+    height: calc(100vh - 70px);
+    visibility: visible;
+    overflow-y: auto;
+  }
+  #menu a {
+    padding: 1rem 0;
+    margin: 0 1rem;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.05);
+  }
+  #btn-mobile {
+    margin-top: 8px;
+    display: flex;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    border: none;
+    background: none;
+    cursor: pointer;
+    gap: 0.5rem;
+  }
+  #hamburger {
+    border-top: 2px solid;
+    width: 20px;
+  }
+  #hamburger::after,
+  #hamburger::before {
+    content: '';
+    display: block;
+    width: 20px;
+    height: 2px;
+    background: currentColor;
+    margin-top: 5px;
+    transition: 0.3s;
+    position: relative;
+  }
+  #nav.active #hamburger {
+    border-top-color: transparent;
+  }
+  #nav.active #hamburger::before {
+    transform: rotate(135deg);
+  }
+  #nav.active #hamburger::after {
+    transform: rotate(-135deg);
+    top: -7px;
+  }
+}
+
+/* tentativa menu hambuguer só com html e css - hmaburguer ficou com 2 riscos
+.header ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.header li a{
+  display: block;
+  padding: 20px;
+  border-right: 1px solid #f4f4f4;
+  text-decoration: none;
+  color: black;
+  cursor: pointer;
+}
+
+.header li a:hover,
+.header .menu-brn:hover {
+background-color: #f4f4f4;
+font-weight: bold;
+}
+
+.header .menu {
+  clear: both;
+  max-height: 0;
+  transition: max-height .2s ease-out;
+}
+
+.header .menu-icon {
+  cursor: pointer;
+  display: inline-block;
+  float: right;
+  position: relative;
+  user-select: none;
+}
+
+.header .menu-icon .navicon {
+  display: block;
+  height: 2px;
+  position: relative;
+}
+
+
+.header .menu-icon .navicon:before,
+.header .menu-icon .navicon:after {
+  background: #333;
+  content: '';
+  margin-top: 20px;
+  margin-left: 80px;
+  display: block;
+  height: 100%;
+  position: absolute;
+  transition: all .2s ease-out;
+  width: 40%;
+}
+
+.header .menu-icon .navicon:before {
+  top: 5px;
+}
+
+.header .menu-icon .navicon:after {
+  top: -1px;
+}
+
+
+
+.header .menu-btn {
+  display: none;
+}
+
+.header .menu-btn:checked ~ .menu {
+  max-height: 240px;
+}
+
+.header .menu-btn:checked ~ .menu-icon .navicon {
+  background: transparent;
+}
+
+.header .menu-btn:checked ~ .menu-icon .navicon:before {
+  transform: rotate(-45deg);
+}
+
+.header .menu-btn:checked ~ .menu-icon .navicon:after {
+  transform: rotate(45deg);
+}
+
+.header .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:before,
+.header .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:after {
+  top: 0;
+}
+ 
+
+/* 48em = 768px
+
+@media (min-width: 48em) {
+  .header li {
+    float: left;
+  }
+  .header li a {
+    padding: 20px 30px;
+  }
+  .header .menu {
+    clear: none;
+    float: right;
+    max-height: none;
+  }
+  .header .menu-icon {
+    display: none;
+  }
+}
+*/
+
+
+
+.body {
+  box-sizing: border-box;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin: 10px 5px 0 5px;
+  bottom: 20px;
+  width: 940px;
+}
+
+@media (max-width: 900px) {
+  .body {
+    width: 380px;
+    grid-template-columns: 1fr;
+  }
+}
+
+.body1 {
+  padding: 2px;
+  bottom: 20px;
+  margin: 40px 50px 0 40px;
+  width: 360px;
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 20px;
+}
+
+
+
+form {
+  margin: 40px;
+}
+
+form label {
+  display: block;
+  font-size: 20px;
+  margin: 0;
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 10px;
+}
+
+.boxinfo {
+  border: solid 1px lightgray;
+  margin: 5px 0;
+  width: 250px;
+}
+
+.boxinfo::placehorlder {
+  font-size: 20px;
+}
+
+.message {
+  height: 60px;
+  border: solid 1px lightgray;
+  margin: 5px 0;
+  width: 250px;
+}
+
+.enviar {
+  width: 40%;
+  padding: 5px 0;
+  background: orange;
+  color: white;
+  font-weight: bold;
+  font-size: 10px;
+  border: none;
+  border-radius: 5px;
+  transition: 1s all;
+  cursor: pointer;
+}
+
+.enviar:hover {
+  background: darkorange;
+  transform: scale(1.2);
+}
+
+
+.footer {
+  background-color: gray;
+  color: gray;
+  height: 20px;
+  bottom: 0;
+  left: 0;
+  position: absolute;
+  width: 100%;
+}
+
+@media (max-width: 900px) {
+  .footer {
+    display: none;
+  }
+}
