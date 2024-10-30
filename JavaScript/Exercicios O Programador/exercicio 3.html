@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+
+<!--exercicio 2 do link: https://oprogramador.bsb.br/aprenderjs_exercicios.php-->
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Exercicio 3 O Programador</title>
+</head>
+
+<body>
+  <h3>Exercicio 3 - O Programador</h3>
+  <p>Faça um programa JavaScript que receba 3 números informados pelo usuário e em seguida apresente uma mensagem de alerta informando qual é o maior número dentre os números informados.</p>
+
+  <input id="numero1" placeholder="digite o primeiro número" type="number">
+  <input id="numero2" placeholder="digite o segundo número" type="number">
+  <input id="numero3" placeholder="digite o terceiro número" type="number">
+  
+  <!--onclick, keyup, keydown, keypress:
+  keyup(): o evento ocorre quando a tecla retorna à posição original no teclado (i.e. quando você solta a mesma).
+
+  keydown(): o evento ocorre quando a tecla é pressionada. O evento repete enquanto a tecla estiver pressionada (exceto para as teclas Ctrl, Alt e Shift).
+
+  keypress(): o evento ocorre quando a tecla está pressionada. O evento repete enquanto a tecla estiver pressionada (exceto para as teclas Ctrl, Alt e Shift).
+  
+  soluçao para verificar depois que para de digitar, peguei aqui: https://schier.co/blog/wait-for-user-to-stop-typing-using-javascript
+  -->
+  <button onclick="checarMaiorNumero()">checar maior numero</button>
+  
+  <p class="resultado">aqui aparecerá o maior numero</p>
+
+  <script>
+    var primeiroNumero, segundoNumero, terceiroNumero, resultado;
+    primeiroNumero = document.querySelector('#numero1');
+    segundoNumero = document.querySelector('#numero2');
+    terceiroNumero = document.querySelector('#numero3');
+    resultado = 0;
+    
+    primeiroNumero.addEventListener('keyup', function () {
+      primeiroNumero = parseFloat(primeiroNumero.value)
+      console.log('Value: ', primeiroNumero);
+    })
+    
+    
+    
+    segundoNumero.addEventListener('keyup', function() {
+      segundoNumero = parseFloat(segundoNumero.value)
+      console.log('Value: ', segundoNumero);
+    })
+    
+    
+    terceiroNumero.addEventListener('keyup', function() {
+     terceiroNumero = parseFloat(terceiroNumero.value);
+     console.log('Value: ', terceiroNumero);
+     })
+     
+    terceiroNumero.addEventListener('keyup', function() {
+       if (primeiroNumero > segundoNumero && primeiroNumero > terceiroNumero) {
+       resultado = "O maior número é: " + primeiroNumero
+       } else if (segundoNumero > primeiroNumero && segundoNumero > terceiroNumero) {
+       resultado = "O maior número é: " + segundoNumero
+       } else if (terceiroNumero > primeiroNumero && terceiroNumero > segundoNumero) {
+       resultado = "O maior número é: " + terceiroNumero
+       } else {
+       resultado = "você digitou dois número iguais, revise"
+       }
+      document.querySelector(".resultado").innerHTML = resultado
+     })
+    
+    function checarMaiorNumero () {
+      if (primeiroNumero > segundoNumero && primeiroNumero > terceiroNumero) {
+        resultado = "O maior número é: " + primeiroNumero
+      } else if (segundoNumero > primeiroNumero && segundoNumero > terceiroNumero) {
+        resultado = "O maior número é: " + segundoNumero
+      } else if (terceiroNumero>primeiroNumero && terceiroNumero>segundoNumero) {
+        resultado = "O maior número é: " + terceiroNumero
+      } else {
+        resultado = "você digitou dois número iguais, revise"
+      }
+      document.querySelector(".resultado").innerHTML = resultado
+    }
+    
+  </script>
+
+</body>
+
+<!--feito sem ajuda-->
+
+</html>
