@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>JS exercicio 1</title>
+</head>
+
+<body>
+
+  <p>Desenvolva uma função que receba um número como parâmetro e verifique se ele é par ou ímpar. Retorne true se for par e false se for ímpar.</p>
+  
+  <form>
+    <input id="parouimpar" onkeyup="check()">
+    <input type="button" value="check" onclick="check()">
+    
+    <div id="result"></div>
+  
+  </form>
+
+  <script>
+    function check() {
+      var v=document.getElementById('parouimpar').value;
+      
+      var result;
+      if (v % 2 == 0) {
+        result = "Par";
+      } else {
+        result = "Impar";
+      }
+      
+      document.getElementById("result").innerHTML = result
+    }
+    
+    console.log (result);
+  </script>
+  
+  <!--Chequei esse link para ajudar https://stackoverflow.com/questions/37458889/javascript-odd-even-in-a-form
+  -->
+
+</body>
+
+</html>
