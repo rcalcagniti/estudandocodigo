@@ -17,6 +17,7 @@
   <input id="numero2" placeholder="digite o segundo número" type="number">
   <input id="numero3" placeholder="digite o terceiro número" type="number">
   
+
   <!--onclick, keyup, keydown, keypress:
   keyup(): o evento ocorre quando a tecla retorna à posição original no teclado (i.e. quando você solta a mesma).
 
@@ -31,60 +32,73 @@
   <p class="resultado">aqui aparecerá o maior numero</p>
 
   <script>
-    var primeiroNumero, segundoNumero, terceiroNumero, resultado;
+    let primeiroNumero, segundoNumero, terceiroNumero, resultado;
     primeiroNumero = document.querySelector('#numero1');
     segundoNumero = document.querySelector('#numero2');
     terceiroNumero = document.querySelector('#numero3');
     resultado = 0;
     
     primeiroNumero.addEventListener('keyup', function () {
-      primeiroNumero = parseFloat(primeiroNumero.value)
-      console.log('Value: ', primeiroNumero);
+     //primeiroNumero = parseFloat(primeiroNumero.value);
+      console.log(typeof primeiroNumero);
+      console.log(Number(primeiroNumero.value));
+      console.log('Value: ', primeiroNumero.value);
     })
     
     
     
     segundoNumero.addEventListener('keyup', function() {
-      segundoNumero = parseFloat(segundoNumero.value)
-      console.log('Value: ', segundoNumero);
+      //segundoNumero = parseFloat(segundoNumero.value)
+      console.log('Value: ', segundoNumero.value);
     })
     
     
     terceiroNumero.addEventListener('keyup', function() {
-     terceiroNumero = parseFloat(terceiroNumero.value);
-     console.log('Value: ', terceiroNumero);
+     //terceiroNumero = parseFloat(terceiroNumero.value);
+     console.log('Value: ', terceiroNumero.value);
      })
      
     terceiroNumero.addEventListener('keyup', function() {
-       if (primeiroNumero > segundoNumero && primeiroNumero > terceiroNumero) {
-       resultado = "O maior número é: " + primeiroNumero
-       } else if (segundoNumero > primeiroNumero && segundoNumero > terceiroNumero) {
-       resultado = "O maior número é: " + segundoNumero
-       } else if (terceiroNumero > primeiroNumero && terceiroNumero > segundoNumero) {
-       resultado = "O maior número é: " + terceiroNumero
-       } else {
-       resultado = "você digitou dois número iguais, revise"
-       }
-      document.querySelector(".resultado").innerHTML = resultado
-     })
-    
-    function checarMaiorNumero () {
-      if (primeiroNumero > segundoNumero && primeiroNumero > terceiroNumero) {
-        resultado = "O maior número é: " + primeiroNumero
-      } else if (segundoNumero > primeiroNumero && segundoNumero > terceiroNumero) {
-        resultado = "O maior número é: " + segundoNumero
-      } else if (terceiroNumero>primeiroNumero && terceiroNumero>segundoNumero) {
-        resultado = "O maior número é: " + terceiroNumero
+       let checarPrimeiroNumero = Number(primeiroNumero.value);
+       let checarSegundoNumero = Number(segundoNumero.value);
+       let checarTerceiroNumero = Number(terceiroNumero.value);
+      
+      if ((checarPrimeiroNumero> checarSegundoNumero) && (checarPrimeiroNumero> checarTerceiroNumero)) {
+        resultado = "O maior número é: " + checarPrimeiroNumero
+      } else if (checarSegundoNumero > checarPrimeiroNumero && checarSegundoNumero > checarTerceiroNumero) {
+        resultado = "O maior número é: " + checarSegundoNumero
+      } else if (checarTerceiroNumero>checarPrimeiroNumero && checarTerceiroNumero>checarSegundoNumero) {
+        resultado = "O maior número é: " + checarTerceiroNumero
       } else {
         resultado = "você digitou dois número iguais, revise"
       }
       document.querySelector(".resultado").innerHTML = resultado
+      
+     })
+    
+    function checarMaiorNumero () {
+      let checarPrimeiroNumero = Number(primeiroNumero.value);
+      let checarSegundoNumero = Number(segundoNumero.value);
+      let checarTerceiroNumero = Number(terceiroNumero.value);
+      
+      if ((checarPrimeiroNumero> checarSegundoNumero) && (checarPrimeiroNumero> checarTerceiroNumero)) {
+        resultado = "O maior número é: " + checarPrimeiroNumero
+      } else if (checarSegundoNumero > checarPrimeiroNumero && checarSegundoNumero > checarTerceiroNumero) {
+        resultado = "O maior número é: " + checarSegundoNumero
+      } else if (checarTerceiroNumero>checarPrimeiroNumero && checarTerceiroNumero>checarSegundoNumero) {
+        resultado = "O maior número é: " + checarTerceiroNumero
+      } else {
+        resultado = "você digitou dois número iguais, revise"
+      }
+      document.querySelector(".resultado").innerHTML = resultado
+      
     }
+  /*primeiroNumero PRECISA ser um objeto, caso contrário nao vai aceitar mudança pelo codigo. Mas o If precisa ser feito com numero, entao criei outra variavel para testar*/
     
   </script>
 
 </body>
 
-<!--feito sem ajuda-->
+<!--feito sem ajuda, descobri o erro sozinha-->
 
 </html>
