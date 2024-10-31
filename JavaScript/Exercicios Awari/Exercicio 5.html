@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Awari exercicio 5</title>
+</head>
+
+<body>
+
+  <p>Desenvolva uma função que determine se um número é primo ou não. Retorne true se for primo e false se não for.</p>
+
+  <form>
+    <input id="primoOuNao" onkeyup="check()">
+    <input type="button" value="check" onclick="check()">
+    <br>
+    <br>
+    <div id="result"></div>
+
+  </form>
+
+  <script>
+    function check() {
+      var numero = document.getElementById('primoOuNao').value;
+
+      var result;
+      if ((numero % 2 == 0) && (numero!=2)) {
+        result = "Não é primo";
+      } else if ((numero % 3 == 0) && (numero!=3)) {
+        result = "Não é primo"
+      } else if ((numero % 5 == 0) && (numero!=5)) {
+        result = "Não é primo"
+      } else if ((numero % 7 == 0) && (numero!=7)) {
+        result = "Não é primo"
+      } else {
+        result = "Número É PRIMO";
+      }
+
+      document.getElementById("result").innerHTML = result
+    }
+
+    console.log(result);
+  </script>
+
+  <!--Chequei esse link para ajudar https://stackoverflow.com/questions/37458889/javascript-odd-even-in-a-form
+   mas mudei a formula para ser para primo e nao par - usando % para saber se é divisivel por aquele numero, mas ao mesmo tempo, nao pode ser aquele numero.
+  -->
+
+</body>
+
+</html>
