@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Awari - exercicio 4</title>
+</head>
+
+<body>
+  <h3>Awari - exercicio codigo 4</h3>
+  <p> Descriçao do exercício: Crie uma função que receba uma string como parâmetro e retorne a mesma string <br> com todas as letras em caixa alta. Utilize essa função para converter diferentes strings.
+    <br>
+    <br> exericio: https://awari.com.br/10-exercicios-divertidos-de-funcoes-em-javascript-para-voce-praticar/</p>
+
+  <input type="text" id="texto" placeholder="digite o texto que deseja colocar em maiusculo">
+  <button onclick="converterParaMaiusculo()" id="myBtn">clique para converter para maiusculo</button>
+  
+  <p class="resultado"></p>
+  <p class="textoMinusculo"></p>
+
+  <script>
+    let textoRecebido = document.getElementById("texto");
+    function converterParaMaiusculo () {
+    let textoAConverter = textoRecebido.value
+    textoAConverter = textoAConverter.toUpperCase()
+    console.log(textoAConverter);
+    
+    document.querySelector(".resultado").innerHTML = textoAConverter;
+    
+    let textoMinusculoJS = textoAConverter.toLowerCase();
+    console.log(textoMinusculoJS);
+    
+    document.querySelector(".textoMinusculo").innerHTML = "O seu texto em minúsculo é: " + textoMinusculoJS
+    
+    }
+    
+    textoRecebido.addEventListener("keypress", function (event) {
+      if (event.key === "Enter") {
+        event.preventDefault();
+        document.getElementById("myBtn").click()
+      }
+    });
+    
+  /*não copiei o codio de toUpperCase() ou do toLowerCase() de nenhum lugar, só busquei no google como era o comando*/
+  
+  /*depois de fazer funcionar com o botao, queria fazer funcionar com o enter, entao peguei o ultimo pedaço do codigo, a parte de addEventListener aqui: https://www.w3schools.com/howto/howto_js_trigger_button_enter.asp*/
+    
+  </script>
+</body>
+
+</html>
