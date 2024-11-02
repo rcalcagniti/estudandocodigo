@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Awari exercicio 6</title>
+</head>
+
+<body>
+  <h3>Exercicio 6 do Awari sobre javascript</h3>
+  <p>Implemente uma função que inverta a ordem dos elementos em um array. Utilize essa função para inverter a ordem de diferentes conjuntos de elementos.</p>
+  
+  <form>
+    <input type="text" id="dado1">
+    <input type="text" id="dado2">
+    <input type="text" id="dado3">
+    <input type="text" id="dado4">
+  </form>
+  
+  <button class="reverter" id="myBtn" onclick="dadosInput()">Clique aqui para inverter a ordem do que informou acima</button>
+  <p class="result"></p>
+
+ <script>
+   let input1=document.getElementById("dado1");
+   let input2=document.getElementById("dado2");
+   let input3=document.getElementById("dado3");
+   let input4=document.getElementById("dado4");
+     
+   
+   function dadosInput () {
+     let inputArray = [];
+     
+     //let input1=document.getElementById("dado1");
+     //let input2=document.getElementById("dado2");
+     //let input3=document.getElementById("dado3");
+     //let input4=document.getElementById("dado4");
+     //primeiro teste quando rodava só com o botão, mas precisei colocar fora da função para rodar com enter
+     
+     let value1=input1.value;
+     let value2=input2.value;
+     let value3=input3.value;
+     let value4=input4.value;
+     
+     inputArray.push(value1,value2,value3,value4);
+     
+     console.log(inputArray);
+     
+     inputArray.reverse();
+     
+     console.log(inputArray);
+     
+     document.querySelector(".result").innerHTML=inputArray
+   }
+   
+   input1.addEventListener("keyup", function(event) {
+    if (event.key === "Enter") {
+    event.preventDefault();
+    document.getElementById("myBtn").click();
+    }
+     });
+   
+   input2.addEventListener("keyup", function (event) {
+     if (event.key === "Enter") {
+       event.preventDefault();
+       document.getElementById("myBtn").click();
+     }
+   });
+    
+   input3.addEventListener("keyup", function(event) {
+    if (event.key === "Enter") {
+    event.preventDefault();
+    document.getElementById("myBtn").click();
+    }
+    });
+  
+   input4.addEventListener("keyup", function(event) {
+     if (event.key === "Enter") {
+    event.preventDefault();
+    document.getElementById("myBtn").click();
+     }
+     });
+   
+ </script>
+
+</body>
+
+</html>
