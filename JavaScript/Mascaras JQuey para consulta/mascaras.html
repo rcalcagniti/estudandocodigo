@@ -1,0 +1,95 @@
+<!--mascaras copiadas de: https://gist.github.com/Erichx/78865eb7a464f105a5b8
+-->
+
+<!doctype html>
+<html lang = "en">
+    <head>
+        <meta charset = "UTF-8">
+        <title>Mascaras Para Campos</title>
+
+        <style >
+            .campos {
+                display: block;
+                margin: left;
+            }
+            .campos label {
+                display: block;
+                margin: left;
+            }
+        </style>
+
+        <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+        <script src="jquery.mask.js"></script>
+        <script type="text/javascript">
+            $().ready(function() {
+                //CEP
+                $('#cep').mask('00.000-000');
+                //CPF
+                $('#cpf').mask('000.000.000-00', {reverse: false});
+                //CNPJ
+                $("#cnpj").mask("00.000.000/0000-00");
+                //Data Brasil
+                $(".dataBR").mask("00/00/0000");
+                //Sigla estadual UF
+                $('#uf').mask('SS');
+                //valor monetario
+                $('.dinheiro').mask('000.000.000.000.000,00', {
+                    reverse : true
+                });
+                //horario apenas Horas e minutos
+                $('.horario').mask('00:00');
+                //porcentagem
+                $('.porcentagem').mask('##0,00%', {
+                    reverse : true
+                });
+                //telefone mascaras de são paulo
+                var masks = ['(00) 00000-0000', '(00) 0000-00009'], maskBehavior = function(val, e, field, options) {
+                    return val.length > 14 ? masks[0] : masks[1];
+                };
+                $('.telefone').mask(maskBehavior, {
+                    onKeyPress : function(val, e, field, options) {
+                        field.mask(maskBehavior(val, e, field, options), options);
+                    }
+                });
+
+            });
+
+        </script>
+    </head>
+    <body>
+        <form name="formulario" method="post">
+            <div class="campos">
+                <label>Data</label>
+                <input type="text" id="data" class="dataBR" placeholder="DD/MM/AAAA" value="" />
+            </div>
+            <div class="campos">
+                <label>Hora</label>
+                <input type="text" id="hora" class="horario" placeholder="HH:MM" value="" />
+            </div>
+            <div class="campos">
+                <label>CEP</label>
+                <input type="text" id="cep" name="cep" class="" placeholder="Digite seu CEP" value="" />
+            </div>
+            <div class="campos">
+                <label>CPF</label>
+                <input type="text" id="cpf" name="cpf" placehold="Digite seu CPF" value="" />
+            </div>
+            <div class="campos">
+                <label>CNPJ</label>
+                <input type="text" id="cnpj" name="cnpj" placehold="Digite seu CNPJ" value="" />
+            </div>
+            <div class="campos">
+                <label>UF</label>
+                <input type="text"id="uf"  name="uf" class="" placehold="Digite seu UF" value="" />
+            </div>
+            <div class="campos">
+                <label>Telefone</label>
+                <input type="text" id="telefone" name="telefone" class="telefone" placeholder="Digite seu Telefone" value="" />
+            </div>
+            <div class="campos">
+                <label>Desconto</label>
+                <input type="text" id="desconto" name="desconto" class="porcentagem"  value="" />
+            </div>
+        </form>
+    </body>
+</html>
