@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>exercicio 7 Awari</title>
+</head>
+
+<body>
+  
+  <h3>exercicio 7 de JavaScript do Awari</h3>
+  <p>Crie uma função que receba um valor e uma porcentagem como parâmetros. A função deve retornar o valor acrescido da porcentagem indicada.</p>
+  
+  <form>
+    <input type="text" id="numero">
+    <input type="text" class="porcentagem" id="porcentagemID">
+    
+  </form>
+  
+  <button onclick="calculo()" id="rodarCalculo">veja o resultado</button>
+  
+  <p class="resultadoFront"></p>
+  
+  
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.js"></script>
+  <script>
+    $('.porcentagem').mask('##0,00%', {reverse: true});
+    
+    let numeroJS = document.getElementById("numero");
+    let porcentagemJS = document.getElementById("porcentagemID");
+    
+    function calculo () {
+      let numeroCalculo = parseFloat(numeroJS.value);
+      let porcentagemCalculo = parseFloat(porcentagemJS.value);
+      let resultado = (numeroCalculo*porcentagemCalculo)/100
+      
+      console.log (resultado);
+      
+      document.querySelector(".resultadoFront").innerHTML= ("O resultado do calculo é: "+resultado);
+    }
+    
+    numeroJS.addEventListener('keyup', function (event) {
+      if (event.key === "Enter") {
+        event.preventDefault();
+        document.getElementById("rodarCalculo").click();
+      }
+    });
+    
+    porcentagemJS.addEventListener('keyup', function (event) {
+      if (event.key === "Enter") {
+        event.preventDefault();
+        document.getElementById("rodarCalculo").click();
+      }
+     });
+    
+  </script>
+  
+</body>
+
+</html>
