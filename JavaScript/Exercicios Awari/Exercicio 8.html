@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Awari exercicio 8</title>
+</head>
+
+<body>
+  <h3>Exercicio 8 do Awari sobre javascript</h3>
+  <p>Desenvolva uma função que verifique se uma palavra é um palíndromo (lê-se da mesma forma da esquerda para a direita e vice-versa). Retorne true se for um palíndromo e false se não for.</p>
+  
+  <form>
+    <input type="text" id="dado">
+  </form>
+  
+  <button class="reverter" id="myBtn" onclick="dadosInput()">Clique aqui para verificar se é um palíndromo</button>
+  <p class="result"></p>
+
+ <script>
+   let dadoJS=document.getElementById("dado");
+
+   function dadosInput () {
+     let original=dadoJS.value.toLowerCase();
+     let reverso = original.split('').reverse().join('').toLowerCase();
+     
+     
+     // para conseguir fazer reverter, eu precisei da ajuda daqui: https://github.com/brunoemferreira/js-palindromo
+     
+     
+     console.log(reverso);
+     
+     if (original=='') {
+       document.querySelector(".result").innerHTML="por favor, digite uma palavra";
+     } else if (original==reverso) {
+       document.querySelector(".result").innerHTML=reverso + "-> a palavra é um palíndromo"
+     } else {
+       document.querySelector(".result").innerHTML=reverso + "-> a palavra não é um palíndromo"
+     }
+   };
+    
+  dadoJS.addEventListener("keypress", function(event) {
+  if (event.key === "Enter") {
+    event.preventDefault();
+    document.getElementById("myBtn").click();
+  }
+  });
+  
+  //por algum motivo, o addEventListener nao esta funcionando com keyup, só com keypress
+    
+ </script>
+
+</body>
+
+</html>
