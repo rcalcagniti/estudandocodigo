@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Awari exercicio 9</title>
+</head>
+
+<body>
+<!--link do exercicio: https://awari.com.br/10-exercicios-divertidos-de-funcoes-em-javascript-para-voce-praticar/
+-->
+  
+  <h3>Exercicio 9 do Awari sobre javascript</h3>
+  <p>Implemente uma função que receba um número como parâmetro e retorne sua representação binária. Utilize essa função para converter diferentes números em binário.</p>
+  
+    <input type="text" id="numero">
+  
+  <button class="converter" id="myBtn" onclick="dadosInput()">Clique aqui para verificar o binário deste numero</button>
+  <p class="result"></p>
+
+ <script>
+   let numeroJS=document.getElementById("numero");
+   
+
+   function dadosInput () {
+     let numeroJS=document.getElementById("numero");
+     numeroJS=parseInt(numeroJS.value);
+     
+     let numeroBinario=numeroJS.toString(2);
+     
+     console.log (numeroJS);
+     console.log(typeof numeroJS);
+     console.log (numeroBinario);
+     
+    document.querySelector(".result").innerHTML="O correspondente binário é: "+numeroBinario
+   };
+    
+  numeroJS.addEventListener("keypress", function(event) {
+  if (event.key === "Enter") {
+    event.preventDefault();
+    document.getElementById("myBtn").click();
+  }
+  });
+  
+ //doc que usei para me ajudar a converter para binario: https://br.virtualcuriosities.com/artigos/36/converter-numero-decimal-para-binario-em-javascript
+    
+ </script>
+
+</body>
+
+</html>
