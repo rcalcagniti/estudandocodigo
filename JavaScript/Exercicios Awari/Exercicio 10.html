@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Awari exercicio 10</title>
+</head>
+
+<body>
+<!--link do exercicio: https://awari.com.br/10-exercicios-divertidos-de-funcoes-em-javascript-para-voce-praticar/
+-->
+  
+  <h3>Exercicio 10 do Awari sobre javascript</h3>
+  <p>Crie uma função que calcule o fatorial de um número. Utilize essa função para calcular o fatorial de diferentes números.</p>
+  <p> fatorial de um número é multiplicalo por todos os números antecedentes a ele. <br>
+  exemplo: 4! = 4 x 3 x 2 x 1</p>
+  
+    <input type="number" id="numero">
+  
+  <button class="converter" id="myBtn" onclick="fatorial()">Clique aqui para verificar o binário deste numero</button>
+  <p class="result"></p>
+
+ <script>
+   let numeroJS=document.getElementById("numero");
+   
+   
+   
+
+   function fatorial () {
+     let numeroJS=document.getElementById("numero");
+     numeroJS=parseInt(numeroJS.value);
+    let resultado = 1;
+    
+     for (var i = numeroJS; i>0; i--) {
+       resultado *= i
+     }
+     
+     if (numeroJS<0) {
+       console.log("numeros negativos nao podem ter fatores")
+     } else {
+       document.querySelector(".result").innerHTML="O resultado do fatorial é: "+resultado
+     }
+     
+     
+     console.log (numeroJS);
+     console.log(typeof numeroJS);
+     console.log (resultado);
+     
+   };
+    
+  numeroJS.addEventListener("keypress", function(event) {
+  if (event.key === "Enter") {
+    event.preventDefault();
+    document.getElementById("myBtn").click();
+  }
+  });
+  
+  
+ //doc que usei para me ajudar a converter para binario: https://github.com/Furkan-Gulsen/HTML-CSS-JAVASCRIPT/blob/master/factorial%20calculation/factorial%20calculation.html
+    
+ </script>
+
+</body>
+
+</html>
