@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Exercicio 4 - O programador</title>
+</head>
+
+<body>
+<!--link da lista de exercicio: https://oprogramador.bsb.br/aprenderjs_exercicios.php
+-->
+
+<h3>Exercicio 4 - O programador</h3>
+<p> Faça um programa JavaScript em que o usuário informará a sua idade e o programa emitirá uma mensagem dizendo se o usuário e ou não menor de idade. </p>
+
+<input class="idade" id="input" placeholder="digite sua idade aqui" type="number">
+<button onclick="verificarIdade()" id="rodarVerificarIdade" class="classVerificarIdade">Verifique se é maior de idade</button>
+
+<p id="result"></p>
+
+<script>
+  let idadeJS = document.getElementById('input');
+  const maiorIdade=18;
+  
+  function verificarIdade() {
+    idadeJS = parseFloat(idadeJS.value);
+    let resultado = (idadeJS>maiorIdade) ? "é maior de idade" : "é menor de idade";
+      document.querySelector('#result').innerHTML=resultado;
+  };
+  
+  //tentei usar um operador ternario ao inves de if, deu certo
+  
+  idadeJS.addEventListener('keyup', function (event){
+    if(event.key==="Enter") {
+      event.preventDefault();
+      document.getElementById('rodarVerificarIdade').click();
+    }
+  });
+  
+  /* resoluçao proposta pelo exercicio - sem body, so script:
+   <script>
+   var idade = parseInt(prompt("Informe a sua idade", "18"));
+   if (!idade.isNaN) mensagem = "O número informado não é válido!"
+   else
+   if (idade < 18) mensagem = "A idade informada é de um menor!"
+   else
+     mensagem = "Se não estiver mentindo é maior de idade!";
+   alert(mensagem);
+   
+   Um coisa interessante da soluçao proposta: verifica se eh um numero valido
+   if (!idade.isNaN) { ... };
+
+   A partir dessa instrução serão feitas verificações para apresentar mensagens personalizadas para o usuário    dependendo da entrada através do metodo prompt();
+     O metodo isNaN() determina se um valor é um número válido;
+     Pode - se também usar essa função com a seguinte sintaxe: isNaN('argumento');
+     Caso não seja um número válido retornará true;
+     A exclamação(!) é um operador lógico que é usado para inverter o resultado devolvido pelo método isNaN():
+*/
+ </script>
+  
+
+
+</body>
+
+</html>

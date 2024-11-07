@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Exercicio 6 - O programador</title>
+</head>
+
+<body>
+  <!--link da lista de exercicio: https://oprogramador.bsb.br/aprenderjs_exercicios.php
+-->
+
+  <h3>Exercicio 6 - O programador</h3>
+  <p> Faça um programa JavaScript em que o usuário informará sua altura e peso e o programa calculará o seu IMC.
+<br>
+<br>
+    Utilize as TAGs: input, button, e div em sua página. Use a div com um identificador e apresente nela o resultado do cálculo do IMC. </p>
+
+  <input class="altura" id="inputAltura" placeholder="digite sua altura em cm">
+  <input class="peso" id="inputPeso" placeholder="digite sua altura em kg">
+  <button onclick="verificarImc()" id="rodarVerificarImc" class="classVerificarImc">Verifique se é maior de idade</button>
+
+  <div id="result"></div>
+
+
+  <script>
+    let alturaJS = document.getElementById('inputAltura');
+    let pesoJS = document.getElementById('inputPeso');
+    
+    function verificarImc() {
+      let alturaJS = document.getElementById('inputAltura');
+      let pesoJS = document.getElementById('inputPeso');
+      alturaJS = alturaJS.value;
+      pesoJS = pesoJS.value;
+      
+      let resultado = (pesoJS/(alturaJS * alturaJS));
+      
+      console.log (resultado);
+      
+      if (isNaN(resultado)) {
+        alert ("Algum dos dados informados é inválido");
+        console.log ("Algum dos dados informados é inválido");
+      } else {
+        document.querySelector("#result").innerHTML="Seu IMC é: " + (resultado*10000)
+      }
+    };
+  /*nao consegui fazer o isNaN como na resoluçao do exercicio 4, peguei ajuda com este link: https://www.w3schools.com/jsref/jsref_isnan.asp */
+
+    alturaJS.addEventListener('keyup', function(event) {
+      if (event.key === "Enter") {
+        event.preventDefault();
+        document.getElementById('rodarVerificarImc').click();
+      }
+      });
+      
+    pesoJS.addEventListener('keyup', function (event){
+      if (event.key === "Enter") {
+        event.preventDefault();
+        document.getElementById('rodarVerificarImc').click();
+      }
+    })
+    
+
+  </script>
+
+
+
+</body>
+
+</html>
