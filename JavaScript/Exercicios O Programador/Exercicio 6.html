@@ -19,9 +19,22 @@
 
   <input class="altura" id="inputAltura" placeholder="digite sua altura em cm">
   <input class="peso" id="inputPeso" placeholder="digite sua altura em kg">
-  <button onclick="verificarImc()" id="rodarVerificarImc" class="classVerificarImc">Verifique se é maior de idade</button>
+  <button onclick="verificarImc()" id="rodarVerificarImc" class="classVerificarImc">Verifique seu imc</button>
 
   <div id="result"></div>
+  
+  <div id="extra">
+  <pre>
+***************************************************************
+|    IMC          |          CATEGORIA                        |
+|-------------------------------------------------------------|
+| Até 18,5        |  Abaixo do peso                           |
+| De  18,5 - 24,9 |  Saudável                                 |
+| De  25,0 - 29,9 |  Sobrepeso                                |
+| De  30,0 - 39,9 |  Obeso                                    |
+| Acima de 40     |  Extremo ou alto risco de obesidade       |
+***************************************************************
+      </pre></div>
 
 
   <script>
