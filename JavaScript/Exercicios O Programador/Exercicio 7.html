@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Exercício 7 - O programador</title>
+  </head>
+  <body>
+  <!--link da lista de exercicio: https://oprogramador.bsb.br/aprenderjs_exercicios.php
+-->
+
+    <h3>Exercicio 7 - O programador</h3>
+  <p> Se listarmos todos os números naturais abaixo de 10 que são múltiplos de 3 ou 5, obtemos 3, 5, 6 e 9. A soma desses múltiplos é 23.
+    Faça um programa JavaScript que encontre a soma de todos os múltiplos de 3 ou 5 abaixo de 1000. </p>
+    
+    
+    <input id="multiploHTML" type="text">
+    <button onclick="quaisOsMultiplos()">descobrir</button>
+    
+    <p class="resultado"></p>
+    
+    <script>
+    let multiplos3 = 0;
+    let multiplos5 = 0;
+    let inputMultiplo = document.getElementById('multiploHTML');
+    //for (i = 0; i < 1000; i++) {
+    //    multiplos3 += (i % 3 == 0) ? i : 0;
+    //    multiplos5 += (i % 5 == 0) ? i : 0;
+    //  }
+    //document.write("Somatórios dos Múltiplos de 3: " + multiplos3 + "<br>");
+    //document.write("Somatórios dos Múltiplos de 5: " + multiplos5 + "<br>");
+    //document.write("Somatórios dos Múltiplos de 5 e 3: " + parseInt(multiplos3 + multiplos5));
+    
+    function quaisOsMultiplos () {
+      let inputMultiplo = document.getElementById('multiploHTML');
+      inputMultiplo = parseFloat(inputMultiplo.value);
+     
+      console.log(inputMultiplo);
+      console.log(typeof inputMultiplo);
+      
+      for (i=0; i<inputMultiplo; i++) {
+        multiplos3 += (i % 3 == 0) ? i : 0;
+        multiplos5 += (i % 5 == 0) ? i : 0;
+       }
+       
+       document.querySelector(".resultado").innerHTML= "Somatórios dos Múltiplos de 3: " + multiplos3 + "<br>" + "Somatórios dos Múltiplos de 5: " + multiplos5 + "<br>" + "Somatórios dos Múltiplos de 5 e 3: " + parseInt(multiplos3 + multiplos5);
+    }
+    
+  /*peguei a resoluçao do proprio exercicio, pq ainda nao entendi bem essa questao do loop, do for (laço de repetiçao). So fiz uma brincadeira com um input para fazer graça*/
+    
+    </script>
+  </body>
+</html>
