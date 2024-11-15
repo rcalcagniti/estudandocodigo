@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+</head>
+
+<!--Array e seus metodos
+-->
+<script>
+  let cars = ["Volvo", "Jeep", "Mercedes"];
+  console.log (cars);
+  
+  cars[0]= "Ford";
+  console.log (cars);
+  
+  //esse metodo substitui o primeiro item por ford e mantem os demais
+  
+  cars.unshift("volvo2");
+  console.log (cars);
+  //esse metodo adiciona sem substituir o primeiro item.
+  cars.shift();
+  console.log (cars);
+  //esse metodo tira o primeiro item
+  
+  console.log (cars.length)
+  // metodo para verificar a quantidade de itens dentro do array
+  
+  console.log(cars[cars.length-1]);
+  // metodo vai mostrar o ultimo item do array
+  
+  cars.push("Honda");
+  console.log (cars);
+  
+  // metodo adiciona um item ao final do array
+  
+  console.log(cars.join("<;>"));
+  
+  //metodo para mudar como eh a separacao de itens no array
+  
+  cars.pop();
+  console.log (cars);
+  // metodo tira o ultimo item do array
+  
+  delete cars[1];
+  console.log (cars);
+  // metodo retira um item do array, mas deixa um rastro, fica como undefined.
+  
+  cars.splice(0,0,"Honda", "toyota", "GM")
+  console.log (cars);
+  
+  cars.splice(2,1,"Hyundai", "Tesla");
+  console.log (cars);
+ // metodo para adicionar itens de acorodo com a posiçao splice (numero da posiçao de começa a adicionar, numero de itens a serem substituidos, adiçoes) - no meu caso, eu coloquei o numero a ser substituido como 0, entao apenas adicionou
+ 
+ console.log (cars.sort());
+ // metodo para ordenar o array em ordem alfabetico, isto muda a posicao dos itens
+ 
+ let numeros = [2,7,3,8,5,6]
+ console.log (numeros);
+ numeros.sort(function(a,b){return a-b});
+ console.log (numeros);
+ numeros.sort(function(a,b){return b-a});
+ console.log (numeros);
+ //metodo para mostrar um array numero em ordem decrescente ou crescente
+ 
+ let maiorNumero = Math.max.apply(null, numeros);
+ console.log(maiorNumero);
+ 
+ let menorNumero = Math.min.apply(null, numeros);
+ console.log(menorNumero);
+ 
+ // metodo para mostrar maior e menor numero dentro de um array
+ 
+ let numerosFiltro = numeros.filter(filtro);
+ function filtro (value) {
+   return value>2;
+ };
+ console.log(numerosFiltro);
+ 
+ let carsFiltro = cars.filter(filtroCarros);
+ function filtroCarros (value) {
+   return value.startsWith('H');
+ }
+ console.log (carsFiltro);
+ 
+ let carsFiltro2 = cars.filter(filtroCarros2);
+ function filtroCarros2 (value) {
+   return value.length > 2;
+ }
+ console.log (carsFiltro2);
+ 
+ // metodo para filtrar dados do array a partir de um parametro
+ 
+ 
+  
+</script>
+  
+</script>
+
+<body>
+
+</body>
+
+</html>
