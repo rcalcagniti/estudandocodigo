@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Exercício 8 - O programador</title>
+    
+    <style>
+      input {
+        width: 200px;
+      }
+      
+      button {
+        width: 200px;
+      }
+    </style>
+  </head>
+  <body>
+  <!--link da lista de exercicio: https://oprogramador.bsb.br/aprenderjs_exercicios.php
+-->
+
+  <h3>Exercicio 8 - O programador</h3>
+  <p> Cada novo termo na seqüência de Fibonacci é gerado adicionando os dois termos anteriores. Começando com 0 e 1, os primeiros termos serão:
+
+0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, ( ... )
+
+Considerando os termos da sequência de Fibonacci a partir dos pares 0 e 1, cujos valores não excedam cinquenta mil, encontre a soma dos termos pares. </p>
+
+    <input id="ateQualNumeroHTML" placeholder="qual numero deve parar o Fibonacci">
+    <br>
+    <button onclick="rodarCalculo()">calcular Fibonnaci</button>
+    
+    <p id="resultado"></p>
+    
+     <script>
+   let ateQualNumeroJS = document.getElementById("ateQualNumeroHTML");
+   let arrSequencia = [0, 1];
+   // aqui ele criou um array com apenas 2 numeros
+   var sequencia = 0;
+   var numPares = 0;
+   var numImpares = 0;
+   var somaPares = 0;
+   var proximoElemento = 0;
+   function rodarCalculo () {
+     ateQualNumeroJS = parseFloat(ateQualNumeroJS.value);
+     console.log(ateQualNumeroJS);
+     console.log(typeof ateQualNumeroJS);
+     do {
+     sequencia++
+     //sequencia++ => sequencia = sequencia + 1 / apenas adicionou um valor
+     proximoElemento = arrSequencia[sequencia] + arrSequencia[sequencia - 1];
+     // arrSequenci[sequencia] seria arrSequencia[0], ou seja, puxaria o primeiro elemento. Mas como mudamos sequencia para ser 1 na linha anterior, ele puxa arrSequencia[1]
+     
+     proximoElemento < ateQualNumeroJS ? (
+         arrSequencia.push(proximoElemento),
+         //aqui ele adiciona o proximoElemento dentro do array arrSequencia
+         proximoElemento % 2 == 0 ?
+         (numPares++,
+           somaPares += proximoElemento) :
+           //se o proximoElemento for divisivel por 2, ele faz: somaPares = somaPres + proximoElemento  - entao o primeiro calculo fica somaPares = 0 + 1 = 1
+         numImpares++) :
+           // se o proximoElemento nao eh divisivel por 2, ele adiciona +1 nos numeros pares
+       false;
+       //false faz o calculo parar quando chega em 5000
+       // depois entra rm looping até chegar a 5000
+       
+       } while (proximoElemento < ateQualNumeroJS) ;
+        document.getElementById("resultado").innerHTML = ("Sequencia de números : " + arrSequencia.join(' / ') + "<br><br>" + "Quantidade de números pares : " + numPares + "<br>" + "Quantidade de números impares : " + numImpares + "<br>" + ("Somatórios dos números pares : " + somaPares))
+   }
+   
+  //quando troquei o DO por uma function e o while pelo if, rodou, mas só adicionou um 1, preciso fazer rodar com os demais.
+   
+/*
+   while (proximoElemento < 50000);
+   document.write("Sequencia de números : " + arrSequencia.join(' / ') + "<br><br>");
+   document.write("Quantidade de números pares : " + numPares + "<br>");
+   document.write("Quantidade de números impares : " + numImpares + "<br>");
+   document.write("Somatórios dos números pares : " + somaPares)
+   */
+ //peguei a resoluçao do proprio exercicio pois ainda nao sei fazer
+ 
+ </script>
+ 
+  </body>
+</html>
