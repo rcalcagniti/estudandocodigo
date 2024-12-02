@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Estudo Switch</title>
+</head>
+
+<body>
+ <p id="teste"></p><br>
+ <input id="cor" type="text">
+ <button onclick="verificaCor()">Verificar</button>
+
+
+  <script>
+    function verificaCor () {
+      let cor = document.getElementById("cor").value;
+      
+      switch (cor) {
+        case "azul": document.body.style.backgroundColor = "blue";
+        break;
+        case "vermelho": document.style.body.backgroundColor = "red";
+        break;
+        default: document.getElementById("teste").innerHTML="Nenhuma cor disponível para " + value;
+      }
+      
+    }
+    
+  
+  </script>
+  
+
+</body>
+
+</html>
