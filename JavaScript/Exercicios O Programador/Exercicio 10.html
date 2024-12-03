@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>exercicio 10 - O programador</title>
+  <style>
+    .divMaior {
+      display: flex;
+    }
+  </style>
+  
+</head>
+
+<body>
+    <!--link da lista de exercicio: https://oprogramador.bsb.br/aprenderjs_exercicios.php
+    -->
+
+  <p>Crie um programa que exiba em uma tabela e destaque todos os números primos que estão entre 0 e 200</p>
+  <div class="divMaior">
+  <div>
+    <table id="tabela"></table>
+  </div>
+  <div>
+    <table id="tabela2"></table>
+  </div>
+  
+  </div>
+
+
+  <script>
+  let numeros = [];
+  for (i=0;i<101;i++) {
+    numeros.push (i);
+    
+    
+    if (i % 2 == 0 && i != 2) {
+      document.getElementById("tabela").innerHTML += "<td>" + i +"</td>"
+    }
+    else if (i % 3 ==0 && i!=3) {
+      document.getElementById("tabela").innerHTML += "<td>" + i +"</td>"
+    }
+    else if (i % 5 == 0 && i!=5) {
+      document.getElementById("tabela").innerHTML += "<td>" + i +"</td>"
+    } else {
+      document.getElementById("tabela").innerHTML += "<td style='font-weight:bold;'>" + i +"</td>"
+    }
+  }
+  
+    for (i = 101; i < 201; i++) {
+    numeros.push(i);
+
+
+    if (i % 2 == 0 && i != 2) {
+      document.getElementById("tabela2").innerHTML += "<td>" + i + "</td>"
+    }
+    else if (i % 3 == 0 && i != 3) {
+      document.getElementById("tabela2").innerHTML += "<td>" + i + "</td>"
+    }
+    else if (i % 5 == 0 && i != 5) {
+      document.getElementById("tabela2").innerHTML += "<td>" + i + "</td>"
+    } else {
+      document.getElementById("tabela2").innerHTML += "<td style='font-weight:bold;'>" + i + "</td>"
+    }
+  }
+  
+  console.log (numeros);
+  
+  /*
+ resoluçao do exercicio:
+   <style>
+      table, th, td {
+        border: 1px solid black;}
+      table {
+        border-collapse: collapse;}
+      th, td {
+        padding: 5px;}
+    </style>
+    <title>JavaScript Exercício</title>
+    <script>
+      tabelaHTML = "<table><tr><th colspan='50'>Números Primos entre 0 e 200<tr><td>1";
+      var primosEncontrados = 0;
+      for (dividendo = 2; dividendo <= 200; dividendo++) {
+        var ehPrimo = true;
+        for (divisor = 2; divisor < dividendo ; divisor++) {
+          if (dividendo % divisor == 0) {
+            ehPrimo = false;
+            tabelaHTML += "<td>" + dividendo;
+            break;
+          };
+        };
+        if (Boolean(ehPrimo)) {
+          tabelaHTML += "<td bgcolor='#00FF00'>" + dividendo;
+          primosEncontrados++;
+        }
+        dividendo % 20 == 0 ? tabelaHTML += "<tr>" : false;
+      };
+      tabelaHTML += "</table>";
+      document.write(tabelaHTML)
+      document.write('Primos encontrados: ' + primosEncontrados+ '<br>');
+    */
+  </script>
+
+</body>
+
+</html>
