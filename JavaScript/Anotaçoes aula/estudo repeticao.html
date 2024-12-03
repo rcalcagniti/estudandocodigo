@@ -10,6 +10,7 @@
 <body>
   
   <p id="teste"></p>
+  <p id="teste2"></p>
   <select id="ano">
     <option selected disabled>Selecione o ano</option>
   </select>
@@ -36,6 +37,13 @@
      };
     
     //ele nao esta apenas mostrando o array, ele está percorrendo o array
+    
+    const fruits = ["maça","laranja","pera"];
+    for (x of fruits) {
+        document.getElementById("teste2").innerHTML += x + " ";
+        console.log (x);
+    }
+    // outra forma de mostrar todos os dados do array
     
 </script>
 
