@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>laços de repetiçao</title>
+</head>
+
+<body>
+  
+  <p id="teste"></p>
+  <select id="ano">
+    <option selected disabled>Selecione o ano</option>
+  </select>
+  
+<script>
+    /* for (i=0; i<100; i++) {
+     document.getElementById("teste").innerHTML += i+","+"<br>";
+     //coloca += porque se fosse so = ia mostrar so o ultimo resultado do laço de repeticao, colocando +=, aparece todos os resultados
+     }
+     */
+    
+    var ano = new Date().getFullYear();
+     for (i=ano; i>1900; i--) {
+      document.getElementById("ano").innerHTML += "<option value='"+i+"'>"+i+"</option>";
+     };
+     
+     //i-- ta fazendo a ordem decrescente, aparece primeiro o 2025
+    
+    const carros = ["honda", "toyota", "hyundai", "GM"]
+    let tamanho = carros.length;
+    
+    for (i=0; i<tamanho-1; i++) {
+      document.getElementById("teste").innerHTML += carros[i] + " - ";
+     };
+    
+    //ele nao esta apenas mostrando o array, ele está percorrendo o array
+    
+</script>
+
+</body>
+
+</html>
+
+
+

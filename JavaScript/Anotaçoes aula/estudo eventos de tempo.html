@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+    
+    <!--link da aula: https://www.youtube.com/watch?v=UbGJhnXv8Po&list=PL2Fdisxwzt_d590u3uad46W-kHA0PTjjw&index=16
+    -->
+
+    <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <title>Estudo de eventos</title>
+    </head>
+
+    <body>
+
+    <p id="tempo">0</p>
+    <button class="start" onclick="ativarContagem()">Ativar contagem</button>
+    <button class="stop" onclick="pararContagem()">Parar contagem</button>
+
+    <br>
+    <br>
+    <br>
+    <br>
+
+    <p id="tempo2">0</p>
+    <button class="start2" onclick="ativarContagem2()">Ativar contagem</button>
+    <button class="stop2" onclick="pararContagem2()">Parar contagem</button>
+
+    <br>
+    <br>
+    <br>
+    <br>
+
+    <p>contagem decrescente parando no 0</p>
+    <p id="tempo3">10</p>
+    <button class="start3" onclick="ativarContagem3()">Ativar contagem</button>
+    <button class="stop3" onclick="pararContagem3()">Parar contagem</button>
+
+    <script>
+    //setTimeOut and SetInternval
+    function ativarContagem () {
+      document.getElementById("tempo").innerHTML = "Começou a contar";
+      tempo = setTimeout (function(){
+        document.getElementById("tempo").innerHTML = "Executou o setTimeOut";
+      }, 1000)
+    }
+
+    function pararContagem() {
+      clearTimeout (tempo);
+      document.getElementById("tempo").innerHTML = "Parou a contagem";
+    }
+
+    function ativarContagem2() {
+      tempo2 = setInterval (function () {
+        let cronometro = document.getElementById("tempo2").innerHTML;
+        let soma = parseInt(cronometro) + 1;
+        document.getElementById("tempo2").innerHTML = soma;
+      }, 1000)
+    };
+
+    function pararContagem2 () {
+      clearInterval (tempo2);
+      document.getElementById("tempo2").innerHTML = "Parou a contagem";
+    };
+
+
+    function ativarContagem3() {
+      tempo3 = setInterval(function() {
+        let cronometro3 = document.getElementById("tempo3").innerHTML;
+        let soma3 = parseInt(cronometro3) -1;
+        document.getElementById("tempo3").innerHTML = soma3;
+        
+        if (soma3 == 0) {
+         pararContagem3();
+         document.getElementById("tempo3").innerHTML = "tempo esgotado";
+         } else
+         { document.getElementById("tempo3").innerHTML = soma3; }
+      }, 1000)
+    };
+
+    function pararContagem3() {
+      clearInterval(tempo3);
+      document.getElementById("tempo3").innerHTML = "Parou contagem";
+    };
+
+      
+    </script>
+    </body>
+
+    </html>
