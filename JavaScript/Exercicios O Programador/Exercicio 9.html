@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>exercicio 9 - O programador</title>
+</head>
+
+<body>
+    <!--link da lista de exercicio: https://oprogramador.bsb.br/aprenderjs_exercicios.php
+    -->
+    
+  <p>Listando os seis primeiros números primos: 2, 3, 5, 7, 11 e 13, podemos ver que o sexto primo é 13.
+
+Qual é o 1001º número primo? Faça um programa JavaScript que apresente esse número para o usuário.</p>
+ 
+ <button id="rodar" onclick="mostrarNumeroPrimo()">verifique</button>
+
+ <p id="result"></p>
+ 
+ <br>
+ <br>
+ <!-- este pedaço nao faz parte do exercicio, fiz de graça mesmo
+ -->
+ <input id="identificadorNumeroPrimo" placeholder="coloque aqui o numero primo que deseja ver">
+ <button id="rodar 2" onclick="qualONumeroPrimo()">veja o numero Primo</button>
+ <p id="result2"></p>
+
+  <script>
+  //para descobrir se um número eh primo, tente dividir por 2,3,5 - se nao der 0 com nenhum deles, eh primo
+  var primeiroNumero = 0;
+  let proximoNumero = primeiroNumero;
+  let numeroPrimo = []
+  for (proximoNumero; proximoNumero<10001; proximoNumero++) {
+    if (proximoNumero % 2 == 0 && proximoNumero !=2) {
+     } else if (proximoNumero % 3 == 0 && proximoNumero !=3) {
+    } else if (proximoNumero % 5 == 0 && proximoNumero !=5) {
+    } else {
+      numeroPrimo.push(proximoNumero);
+    }
+    
+    if (numeroPrimo.length>1002) {
+      break;
+    }
+  };
+  /* eu tentei fazer o % 2 que nao fosse, mas nao deu certo, por isso so documentei no else
+  */
+  console.log(numeroPrimo);
+  console.log(numeroPrimo[1000]);
+  
+  function mostrarNumeroPrimo () {
+    document.getElementById("result").innerHTML = numeroPrimo[1000];
+  }
+  
+  let identificador = document.getElementById("identificadorNumeroPrimo")
+  function qualONumeroPrimo () {
+    qualONumero = parseFloat (identificador.value);
+    console.log (identificador.value);
+    console.log (qualONumero);
+    console.log (numeroPrimo[qualONumero-1]);
+    document.getElementById("result2").innerHTML = numeroPrimo[qualONumero-1];
+  }
+  
+/* como eh o resultado do exercicio dentro do script:
+
+var primosEncontrados = 0;
+      for (dividendo = 2; primosEncontrados < 1001; dividendo++) {
+        var ehPrimo = true;
+        for (divisor = 2; dividendo > divisor ; divisor++) {
+          if (dividendo % divisor == 0) {
+            ehPrimo = false;
+            break;
+          };
+        };
+        if (Boolean(ehPrimo)) {
+          primosEncontrados++;
+        }
+      };
+      document.write("O 1001o número primo é: ");
+      document.write(--dividendo + '<br><br>');
+  */
+  </script>
+
+</body>
+
+</html>
