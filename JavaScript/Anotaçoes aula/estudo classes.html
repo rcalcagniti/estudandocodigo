@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Estudando Classes</title>
+</head>
+
+<body>
+
+<script>
+  
+  //este eh um objeto normal
+  const carro = {
+    marca: "fiat",
+    modelo: "uno",
+    ano: 2001,
+  }
+  
+  //aqui eh como funcioa uma classe
+  // idealmente, uma classe começa o nome com eltra maiuscula
+  class Carro2 {
+    constructor (valor1, valor2, valor3) {
+      this.modelo = valor1;
+      this.marca = valor2;
+      this.ano = valor3;
+    }
+    
+    buzina () {
+      return (this.marca + ": " + "Biiiiiii");
+    }
+  };
+  
+  const outroCarro = new Carro2 ("Fit", "Honda", 2014);
+  const novoCarro = new Carro2 ("yaris cross", "toyota", 2025);
+  
+  //ajuda a criar diversos objetos iguais de forma mais rapida
+  
+  console.log(outroCarro);
+  console.log(outroCarro.modelo);
+  console.log(outroCarro.buzina());
+  console.log(novoCarro.buzina());
+  
+  outroCarro.ano = 2013;
+  console.log(outroCarro.ano);
+  
+</script>
+
+</body>
+
+</html>
