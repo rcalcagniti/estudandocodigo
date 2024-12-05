@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+</head>
+
+<body>
+    <!-- link para exercicios: https://oprogramador.bsb.br/aprenderjs_exercicios.php
+    -->
+  
+  <h3>Exercicio 12 - O programador</h3>
+  <p>Dada uma sequência de caracteres, inverta o seu conteúdo e apresente ao usuário o resultado invertido</p>
+  
+  <input id="dado" placeholder="digite a sua sequencia">
+  <button id="botaoRodarFuncao" onclick="funcaoInverter()">inverta</button>
+  
+  <p id="resultado"></p>
+  
+  
+  <script>
+  //soluçao usando as funcoes do JS
+  
+  let inputDado = document.getElementById("dado");
+  
+  function funcaoInverter () {
+   inputDado = document.getElementById("dado").value.toLowerCase();
+   //se coloca apra pegar o dado dentro da funcao, nao precisa fazer uma segunda como fiz no exercicio do Awari
+    console.log (inputDado);
+   reverso = inputDado.split('').reverse().join('');
+   console.log (reverso);
+   
+   document.getElementById("resultado").innerHTML = reverso
+
+  }
+  
+  
+  //mas para o EventListener funcionar, a variavel precisa ter o document.getElementById fora da funcao para conseguir pegar o dado
+  inputDado.addEventListener('keyup', function (event) {
+    if (event.key === "Enter") {
+      event.preventDefault ();
+      document.getElementById("botaoRodarFuncao").click()
+    }
+  })
+  
+  
+
+    
+  </script>
+
+</body>
+
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Exercicio 13 - O Programador</title>
+</head>
+
+<body>
+  <!-- link to exercicio: https://oprogramador.bsb.br/aprenderjs_exercicios.php
+  -->
+  
+  <h3>Exercicio 13 - O programador</h3>
+  <p>1) Elaborar um programa que apresente o resultado de uma operação de potenciação com números aleatórios, inteiros e positivos; <br>
+    2) Apresente os números envolvidos na operação (base, expoente e potência/resultado)
+   <br>
+   <br>
+   A potenciação (ou exponenciação) é uma operação onde um dado número é multiplicado por ele mesmo, uma quantidade 'n' de vezes. <br>
+
+    an = b <br>
+
+   Onde:<br>
+   a = base;<br>
+   n = expoente;<br>
+   b = potência.<br>
+  </p>
+  
+  <input id="valorA" placeholder="digite o valor de A">
+  <input id="valorN" placeholder="digite o valor de n">
+  <button id="rodarFormula" onclick="rodarCalculoParaPotenciacao()">Faça o Calculo</button>
+  
+  <p id="resultado"></p>
+  
+  <button id="rodarFormula2" onclick="rodarCalculoParaPotenciacao2()">Faça o Calculo (outra forma de calculo) </button>
+
+  <p id="resultado2"></p>
+  
+  <script>
+    let inputValorA = document.getElementById("valorA");
+    let inputValorN = document.getElementById("valorN");
+    
+    function rodarCalculoParaPotenciacao () {
+      calculoValorA = parseFloat(inputValorA.value);
+      calculoValorN = parseFloat(inputValorN.value);
+      
+      valorFinalFormula = Math.pow(calculoValorA,calculoValorN);
+      
+      console.log(calculoValorA);
+      console.log(calculoValorN);
+      console.log (valorFinalFormula);
+      
+      document.getElementById("resultado").innerHTML = "O valor da exponenciação é: " + valorFinalFormula;
+    }
+    
+    
+    //segundo jeito de fazer exponencial
+    function rodarCalculoParaPotenciacao2 () {
+      calculoValorA2 = parseFloat(inputValorA.value);
+      calculoValorN2 = parseFloat(inputValorN.value);
+      
+      valorFinalFormula2 = calculoValorA2 ** calculoValorN2
+      
+      console.log(calculoValorA2);
+      console.log(calculoValorN2);
+      console.log (valorFinalFormula2);
+      
+      document.getElementById("resultado").innerHTML = "O valor da exponenciação é: " + valorFinalFormula2;
+    }
+    
+    inputValorA.addEventListener('keyup', function (event) {
+      if (event.key === "Enter") {
+        event.preventDefault();
+        document.getElementById("rodarFormula").onclick();
+      }});
+    
+    inputValorN.addEventListener('keyup', function(event) {
+     if (event.key === "Enter") {
+       event.preventDefault();
+       document.getElementById("rodarFormula").onclick();
+     }});
+    
+  </script>
+
+</body>
+
+</html>
