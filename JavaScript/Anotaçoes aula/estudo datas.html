@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Manipulacao de datas</title>
+</head>
+
+<body>
+<script>
+//comando basico para pegar a data
+  let data = new Date ();
+
+//como pegar o ano
+  let ano = data.getFullYear ();
+
+//como pegar o mês atual
+  let mes = data.getMonth();
+  //com getMonth ele mostra o mes de 0 a 11 (ou seja, janeiro eh o mes zero)
+  const mesesDoAno = ["Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho", "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"]
+  let mesEscrito = mesesDoAno[mes];
+  //dessa forma, agora vai aparecer o mes escrito corretamente
+  
+//como pegar dia do mes - 1 a 31
+   let diaMes = data.getDate();
+   
+//como pegar o dia da semana - vai mostrar de 0 a 6:
+  let diaSemana = data.getDay();
+
+//como pegar a hora - 0 a 23  e minutos -0 a 59
+  let hora = data.getHours()
+  let minutos = data.getMinutes();
+  let segundos = data.getSeconds();
+  let milisegundos = data.getMilliseconds();
+
+// como a data no padrao brasileiro
+  let dataBrasil = data.toLocaleString('pt-BR');
+  //mostra data e hr
+  let dateBrasilSemHR = data.toLocaleString('pt-BR', {dateStyle: 'short'});
+  //mostra so a data
+  let dataBrasilSoHR = data.toLocaleString('pt-BR', {timeStyle: 'short'});
+  // mostra so a hr
+  
+//outra forma de pegar o padrao brasileiro:
+  let dataPadraoBrasil = diaMes + "/" + (mes+1) + "/" + ano
+  //só que o mes vai estar errado, porque comeca em 0, por isso coloca + 1
+  
+//como comparar datas (maior ou menor)
+  const dataLimite = new Date (2022, 0, 15)
+  //o formato eh ANO, MES, DIA - sendo o mes comecando em 0
+  let dataHoje = new Date();
+  if (hoje > vencimento) {
+    console.log ("sua conta está vencida");
+  }
+  
+//diferença de datas em dias
+  let dataInicial = new Date ();
+  const dataFinal = new Date (2024, 12, 31);
+  
+  let diferencaTempo = dataFinal.getTime() - dataInicial.getTime()
+  //precisa do getTime para pegar em milisegundos para fazer a diferenca - ele so faz esse calculo em milisegundos
+  let diferencaEmDias = Math.ceil(diferencaTempo / (24*60*60*1000))
+  // ceil faz o arredondamento
+  
+
+  
+  
+</script>
+</body>
+
+</html>https://oprogramador.bsb.br/aprenderjs_exercicios.php?page=2
