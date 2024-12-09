@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Exercicio 20 - O Programador</title>
+</head>
+
+<body>
+ <h3>Exercicio 20 - O Programador</h3>
+ <p>Dada uma sequência de caracteres, inverta o seu conteúdo e apresente ao usuário o resultado invertido.
+<br>
+Use apenas funções nativas do JavaScript.</p>
+
+<input id="textoHTML" placeholder="digite seu texto">
+<button id="rodarFormula" onclick="inverterDado()">Verifique o inverso</button>
+
+<p id="resultado"></p>
+
+<script>
+let textoJS = document.getElementById("textoHTML");
+
+function inverterDado () {
+  textoJS = document.getElementById("textoHTML").value.split('').reverse().join('');
+  
+  document.getElementById("resultado").innerHTML = textoJS
+}
+
+textoJS.addEventListener('keyup', function (event) {
+  if (event.key === "Enter") {
+    event.preventDefault();
+    document.getElementById("rodarFormula").click()
+  }
+});
+</script>
+
+<!--soluçao oficial do exercicio:
+ <script>
+      function inverter() {
+        var nome = document.getElementById("nome").value;
+        return nome.split(' ').reverse().join('');
+      }
+    </script>
+  </head>
+  <body>
+    <h1>Exercício 12</h1>
+    <label for="nome">Informe um nome qualquer: </label>
+    <input id="nome" type="text" maxlength=100 minlength=2><br>
+    <button onclick="alert(inverter())">Retrevni (Inverter)</button>
+  </body>
+  -->
+
+</body>
+
+</html>
