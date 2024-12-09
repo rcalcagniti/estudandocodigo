@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Exercicio 14 - Awari</title>
+</head>
+
+<body>
+<h3>Exercicio 14 - Awari</h3>
+<p>Implemente uma função que calcule a média ponderada de um conjunto de notas. A função deve receber as notas e os respectivos pesos como parâmetros, e retornar a média ponderada.</p>
+<div id="notas">
+<input id="valor1HTML" placeholder="digite a nota">
+<input id="peso1HTML" placeholder="digite o peso da nota">
+<br>
+<input id="valor2HTML" placeholder="digite a nota">
+<input id="peso2HTML" placeholder="digite o peso da nota">
+</div>
+<br>
+<button id="maisNotas" onclick="adicionarNota ()">adicionar mais uma nota e peso</button>
+<br>
+
+<button id="rodarFormula" onclick="calcularMedia ()">verifique a média</button>
+
+<p id="resultado"></p>
+
+<script>
+  function adicionarNota () {
+    document.getElementById("notas").innerHTML = "<input id='valor3HTML' placeholder='digite a nota'> <input id='peso3HTML' placeholder='digite o peso da nota'>" + "<br> <input id='valor1HTML' placeholder='digite a nota'> <input id='peso1HTML' placeholder='digite o peso da nota'>"+"<br> <input id='valor2HTML' placeholder='digite a nota'> <input id='peso2HTML' placeholder='digite o peso da nota'>"
+  };
+  
+  function calcularMedia () {
+    let valor1JS = parseFloat(document.getElementById("valor1HTML").value);
+    let peso1JS = parseFloat(document.getElementById("peso1HTML").value);
+    
+    let valor2JS = parseFloat(document.getElementById("valor2HTML").value);
+    let peso2JS = parseFloat(document.getElementById("peso2HTML").value);
+    
+    let valor3JS = document.getElementById("valor3HTML");
+    let peso3JS = document.getElementById("peso3HTML");
+    
+    let result = 0;
+    
+    if (valor3JS == null || valor3JS == 0) {
+      result = ((valor1JS * peso1JS)+(valor2JS * peso2JS))/(peso1JS + peso2JS)
+    } else {
+      valor3JS = parseFloat(document.getElementById("valor3HTML").value);
+      peso3JS = parseFloat(document.getElementById("peso3HTML").value);
+      result = ((valor1JS * peso1JS)+(valor2JS * peso2JS)+(valor3JS * peso3JS))/(peso1JS + peso2JS + peso3JS);
+    }
+    
+    console.log(valor3JS);
+    console.log(valor2JS);
+    console.log(result);
+    
+    document.getElementById("resultado").innerHTML = "A Média das Notas é: " + result;
+  };
+  
+</script>
+
+</body>
+
+</html>

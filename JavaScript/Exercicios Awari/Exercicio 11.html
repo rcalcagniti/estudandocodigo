@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Exercicio 11 - Awari</title>
+</head>
+
+<body>
+  <!--link do exercicio: https://awari.com.br/10-exercicios-divertidos-de-funcoes-em-javascript-para-voce-praticar/ -->
+  <h3>Exercicio 11 - Awari</h3>
+  <p>Crie uma função que receba dois números como parâmetros e retorne a soma deles</p>
+  
+  <input id="dadoHTML1" placeholder="digite o primeiro numero">
+  <input id="dadoHTML2" placeholder="digite o segunda numero">
+  
+  <button id="rodarFormula" onclick="fazerSoma()">Faça a soma</button>
+  
+  <p id="resultado">
+    
+  </p>
+  <script>
+    function fazerSoma () {
+      let dadoJS1 = parseFloat(document.getElementById("dadoHTML1").value);
+      let dadoJS2 = parseFloat(document.getElementById("dadoHTML2").value);
+      let result = dadoJS1 + dadoJS2
+      
+      document.getElementById("resultado").innerHTML = "O resultado da soma é: " + result
+    }
+  </script>
+  
+
+</body>
+
+</html>

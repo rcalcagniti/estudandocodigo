@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Exercicio 13 - Awari</title>
+</head>
+
+<body>
+  
+  <h3>Exercciio 13 - Awari</h3>
+  <p>Desenvolva uma função que converta uma temperatura de Celsius para Fahrenheit. A função deve receber a temperatura em Celsius como parâmetro e retornar a temperatura convertida.</p>
+  
+  <input id="inputValorHTML" placeholder="digite a temperatura a ser convertida">
+    <select id="unidadeDeTemperatura" class="selecaoUnidade">
+      <option value="Celsius">Celsius</option>
+      <option value="Fahrenheit">Fahrenheit</option>
+    </select>
+    <span class="arrow"> <> </span>
+    <select id="paraUnidadeTemperatura" class="output">
+      <option value="Fahrenheit">Fahrenheit</option>
+      <option value="Celsius">Celsius</option>
+    </select>
+    
+  <button onclick="fazerConversaoTemperatura()">Faça conversão</button>
+    
+  <p id="resultado"></p>
+  
+  <script>
+    function fazerConversaoTemperatura () {
+      let inputValorJS = parseFloat(document.getElementById("inputValorHTML").value);
+      let temperaturaInicial = document.getElementById("unidadeDeTemperatura").value;
+      let temperaturaFinal = document.getElementById("paraUnidadeTemperatura").value;
+      let resultadoTemperatura = 0;
+      
+      console.log (inputValorJS);
+      console.log (temperaturaInicial);
+      
+      if (temperaturaInicial == "Celsius") {
+        resultadoTemperatura = ((inputValorJS/5)*9)+32
+      } else if (temperaturaInicial == "Fahrenheit") {
+        resultadoTemperatura = ((inputValorJS-32)/9)*5
+    };
+     
+     document.getElementById("resultado").innerHTML = "A temperatura é: " + resultadoTemperatura + " " + temperaturaFinal;
+      
+    };
+    
+  </script>
+</select>
+
+</body>
+
+</html>

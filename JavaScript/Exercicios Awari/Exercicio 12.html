@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Exercicio 12 - Awari</title>
+</head>
+
+<body>
+  
+ <h3>Exercicio 12 - Awari</h3>
+ <p>Crie uma função que receba uma lista de números como parâmetro e retorne o maior número da lista.</p>
+ 
+ <input id="listaNumeroHTML" placeholder="listaDeNumeros">
+ <button onclick="encontrarMaior()">Encontre o maior numero</button>
+ 
+ <p id="resultado"></p>
+ 
+ <script>
+   
+   function encontrarMaior () {
+     let listaNumerosJS = document.getElementById("listaNumeroHTML").value.split('');
+     let maiorNumero = Math.max.apply(null, listaNumerosJS);
+     
+     document.getElementById("resultado").innerHTML = "O Maior número é: " + maiorNumero;
+   }
+   
+ </script>
+
+</body>
+
+</html>
