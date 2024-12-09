@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Exercicio 19 - O programados</title>
+</head>
+
+<body>
+  <!-- link do exercicio: https://oprogramador.bsb.br/aprenderjs_exercicios.php?page=2 -->
+  <h3>Exercicio 19 - O Programador</h3>
+  <p>Dada uma sequência de caracteres, coloque em ordem crescente e apresente ao usuário a sequência original e o resultado ordenado.</p>
+  <input id="dadosHTML" placeholder="digite a sua sequencia de numero">
+  <button id="rodarFormula" onclick="verificarOrdemCrescente ()">Verifique</button>
+  
+  <p id="resultado"></p>
+  
+  <script>
+    let dadosJS = document.getElementById("dadosHTML")
+    
+    function verificarOrdemCrescente () {
+     dadosJS = document.getElementById("dadosHTML").value.split('');
+     dadosJS.sort (function (a,b) {return a-b});
+     console.log(dadosJS);
+     
+     document.getElementById("resultado").innerHTML = "A ordem crescente é: " + dadosJS;
+     
+    }
+    
+    //numeros.sort(function(a,b){return a-b});
+    
+  </script>
+
+<!-- como foi resolvido oficialmente:
+ <script>
+      function ordenar() {
+        var arr = document.getElementById("texto").value.split('');
+        var resultadoHTML = document.getElementById("resultado");
+        resultadoHTML.innerHTML = 'Não ordenado:<br>' + arr.join(' ') + '<br><br>';
+        var tmp;
+        for (var i = 0; i < arr.length - 1; i++) {
+          for (var j = i + 1; j < arr.length; j++) {
+            if (arr[i] > arr[j]) {
+              tmp = arr[i];
+              arr[i] = arr[j];
+              arr[j] = tmp;
+            }
+          }
+        }
+       resultadoHTML.innerHTML += 'Ordenado:<br>' + arr.join(' ');
+      }
+    </script>
+  </head>
+  <body>
+    <h1>Exercício 19</h1>
+    <label for="texto">Informe um texto qualquer: </label>
+    <input id="texto" type="text" maxlength=100 minlength=2><br>
+    <button onclick="ordenar()">Ordenar</button>
+    <div id="resultado"></div>
+  </body>
+  -->
+
+</body>
+
+</html>
