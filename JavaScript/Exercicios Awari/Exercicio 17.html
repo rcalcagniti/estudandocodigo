@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Exercicio 17 - Awari</title>
+</head>
+
+<body>
+  <h3>Exercicio 17 - Awari</h3>
+  <p>Criar uma função que remova elementos duplicados de um array e retorne o novo array sem duplicatas.</p>
+  
+  <input id="inputHTML"><br>
+  <button id="adicionarAoArray" onclick="adicionarItem ()">Adicione o elemento a lista</button>
+  <br>
+  <br>
+  <button id="removerDuplicados" onclick="limparLista ()">Remova duplicados da lista</button>
+  <br>
+  <p style="font-weight:600">Abaixo irão aparecer os itens que você tem adicionado a lista</p>
+  <p id="mostrarListaNaoLimpa" style="color: blue"></p>
+  
+  <script>
+    let lista = [];
+    //array precisa ficar fora da funçao, se nao ele nao adiciona valores, fica apenas substituindo dentro da funcao
+    
+    function adicionarItem () {
+      let inputJS = document.getElementById("inputHTML").value;
+      
+      lista.push(inputJS);
+      
+      console.log(inputJS);
+      console.log(lista);
+      //pensei que precisasse de um FOR, mas nao precisa
+      document.getElementById("mostrarListaNaoLimpa").innerHTML += inputJS + "<br>"
+    };
+    
+    function limparLista (){
+      lista.sort();
+      console.log(lista);
+      let temDuplicado = true;
+      
+      for (i=0; i<=lista.length; i++) {
+        lista[i]===lista[i-1] ? delete lista [i] : temDuplicado = false;
+      }
+      
+      //a ideia de arrumar em ordem alfabetica para depois compara veio daqui: https://www.devmedia.com.br/forum/valores-repetidos-array-em-javascript/620403
+      
+      console.log (lista);
+      
+      let listaSemDuplicados = lista.filter(filtroDuplicados)
+      function filtroDuplicados (value) {
+        return value != undefined;
+      };
+      console.log (listaSemDuplicados);
+      lista = listaSemDuplicados;
+      console.log(lista);
+      console.log(lista);
+      
+      document.getElementById("mostrarListaNaoLimpa").innerHTML = "";
+      
+      for (i=0; i<lista.length;i++) {
+      console.log(lista[i]);
+      document.getElementById("mostrarListaNaoLimpa").innerHTML += lista[i] + "<br>"
+      }
+      //tentei fazer on join o <br>  mas nao funfou, pelo que estudei, eh porque eh um array de objeto, ai nao funciona dentro da funcao
+    };
+    
+  </script>
+  
+
+</body>
+
+</html>

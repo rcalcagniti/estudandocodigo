@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Exercicio 18 - Awari</title>
+</head>
+
+<body>
+  <h3>Exercicio 18 - Awari</h3>
+  <p>Desenvolver uma função que receba uma lista de nomes e retorne uma nova lista contendo apenas os nomes que começam com uma determinada letra.</p>
+  
+  <input id="addListaHTML">
+  <br>
+  <button id="adicioneALista" onclick="adicionarAListaArray ()">Adicione a Lista</button>
+  <br>
+  <br>
+  <input id="letraFiltro">
+  <button id="organizeALista" onclick="filtrarAListaArray()" type="text" maxlength="1">Filtre a Lista</button>
+  <br>
+  <br>
+  <p id="header"></p>
+  <p id="resultado"></p>
+  <br>
+  <br>
+  <p id="headerFiltro"></p>
+  <p id="resultadoFiltro"></p>
+  
+  <script>
+    let listaNomes = [];
+    
+    function adicionarAListaArray () {
+      let inputJS = document.getElementById("addListaHTML").value.toLowerCase();
+      
+      listaNomes.push(inputJS);
+      
+      document.getElementById("header").innerHTML = "Lista de nomes: ";
+      document.getElementById("resultado").innerHTML += inputJS + "<br>";
+    }
+    
+    function filtrarAListaArray () {
+      let inputFiltroJS = document.getElementById("letraFiltro").value.toLowerCase()
+      console.log (inputFiltroJS);
+      
+      if (listaNomes == "" ) {
+        document.getElementById("headerFiltro").innerHTML="Não há nenhuma lista para filtrar";
+      } else {
+      
+      let listaFiltro = listaNomes.filter (filtroListaNomes);
+      function filtroListaNomes (value) {
+        return value.startsWith(inputFiltroJS);
+      };
+      
+      document.getElementById("headerFiltro").innerHTML = "A lista filtrada é";
+      
+      for (i=0; i<listaFiltro.length; i++) {
+      document.getElementById("resultadoFiltro").innerHTML += listaFiltro[i] + "<br>";
+      }
+      
+      }
+    }
+    
+  </script>
+
+</body>
+
+</html>
