@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Exercicio 15 - Awari</title>
+</head>
+
+<body>
+  
+  <h3>Exercicio 15 - Awari</h3>
+  <p>Crie uma função que valide se uma senha atende aos critérios estabelecidos</p>
+  
+  <input type="password" id="senhaHTML">
+  <button onclick="verificarSenha()">Verifique a Senha</button>
+  <button onclick="verificarSenha2()">Verifique a Senha 2</button>
+  
+  <p id="resultado"></p>
+
+  <script>
+    function verificarSenha () {
+      let senhaJS = document.getElementById("senhaHTML").value;
+      const letraMaiuscula = /[A-Z]/;
+      const letraMinuscula = /[a-z]/;
+      const numeros = /[0-9]/;
+      const caracteresEspeciais = /[!|@|#|$|%|^|&|*|(|)|-|_]/;
+      let retorno = false;
+      
+      if (senhaJS < 8) {
+        console.log(retorno);
+        document.getElementById("resultado").innerHTML = "sua senha não atende os critérios estabelecidos";
+      } else if (senhaJS.match(letraMaiuscula) != null && senhaJS.match(letraMinuscula) && senhaJS.match(numeros) != null && senhaJS.match(caracteresEspeciais)) {
+        retorno = true;
+        console.log (retorno);
+        document.getElementById("resultado").innerHTML = "Tudo certo, sua senha atende os critérios estabelecidos";
+      }  else {
+        console.log(retorno);
+        document.getElementById("resultado").innerHTML = "sua senha não atende os critérios estabelecidos";
+      };
+    };
+    
+    function verificarSenha2 () {
+       let senhaJS = document.getElementById("senhaHTML").value;
+       const letraMaiuscula = /[A-Z]/;
+       const letraMinuscula = /[a-z]/;
+       const numeros = /[0-9]/;
+       const caracteresEspeciais = /[!|@|#|$|%|^|&|*|(|)|-|_]/;
+       let retorno = false;
+       
+       let verificarLetraMaiuscula = 0;
+       let verificarLetraMinuscula = 0;
+       let verificarNumeros = 0;
+       let verificarCaracteres = 0;
+
+       senhaJS = senhaJS.split('');
+
+       for (i = 0; i <= senhaJS.length; i++) {
+        letraMaiuscula.test(senhaJS[i]) ? verificarLetraMaiuscula++ : retorno = false;
+        letraMinuscula.test(senhaJS[i]) ? verificarLetraMinuscula++ : retorno = false;
+        numeros.test(senhaJS[i]) ? verificarNumeros++ : retorno = false;
+        caracteresEspeciais.test(senhaJS[i]) ? verificarCaracteres++ : retorno = false;
+       }
+       
+       if (verificarLetraMaiuscula >= 1 && verificarLetraMinuscula >= 1 && verificarNumeros >= 1 && verificarCaracteres >= 1) {
+         retorno = true;
+         console.log (retorno);
+         document.getElementById("resultado").innerHTML = "Tudo certo, sua senha atende os critérios estabelecidos";
+       } else {
+         retorno = false;
+         console.log (retorno);
+         document.getElementById("resultado").innerHTML = "sua senha não atende os critérios estabelecidos";
+       }
+    };
+    
+    //link que me ajudou na resoluçao: https://blog.dbins.com.br/validar-senhas-com-javascript
+    //link para entender funcao match: https://www.w3schools.com/jsref/jsref_match.asp
+    //link para entender funcao test: https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/RegExp/test
+  </script>
+
+</body>
+
+
+</html>
