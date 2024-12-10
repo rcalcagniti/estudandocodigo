@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Exercicio 16 - Awari</title>
+</head>
+
+<body>
+  <!--link do exercicio: https://awari.com.br/10-exercicios-divertidos-de-funcoes-em-javascript-para-voce-praticar/
+  -->
+  
+  <h3>Exercicio 16 - Awari</h3>
+  <p>Implementar uma função que receba um número e retorne todos os números primos menores ou iguais a ele.</p>
+  
+  <input id="numeroHTML" placeholder="digite o numero">
+  <button onclick="verificarNumerosPrimos()" id="rodarFuncao">Verifique os numeros primos</button>
+  
+  <p id="resultado"></p>
+  
+  <script>
+   let verificarEnter = document.getElementById("numeroHTML");
+       verificarEnter.addEventListener('keyup', function(event) {
+       if (event.key === "Enter") {
+       event.preventDefault();
+       document.getElementById("rodarFuncao").click()
+      }
+    });
+    //eu tinha colocado depois da funcao e nao funcionou, precisa ser antes da funcao porque o codigo roda de cima para baixo, se for colocado em baixo, nao pega o dado colocoado no numeroHTML
+  
+    function verificarNumerosPrimos() {
+      let numeroJS = parseFloat(document.getElementById("numeroHTML").value);
+      let numeroArray = [];
+      let numerosPrimosArray = [];
+      
+      console.log(numeroJS);
+      
+      for (i=numeroJS; i>=0; i--) {
+        //precisa ser menor ou igual a zero, se não, não preenche o dado 0 do array
+        numeroArray[i] = i;
+      };
+      
+      console.log(numeroArray);
+      
+      for (i=numeroJS; i>0; i--) {
+        if (numeroArray[i] % 2 == 0 && numeroArray[i]!=2) {}
+        else if (numeroArray[i] % 3 == 0 && numeroArray[i] != 3) {}
+        else if (numeroArray [i] % 5 == 0 && numeroArray[i] != 5) {}
+        else {
+          numerosPrimosArray.push(i);
+        };
+        
+        numerosPrimosArray.sort (function (a,b) {return a-b});
+        //eu tentei usar apenas reverse(), mas não deu certo, ficou fora de ordem para numeros maiores
+        console.log(numerosPrimosArray);
+        
+        document.getElementById("resultado").innerHTML = "Os números primos menores que este são: " + numerosPrimosArray;
+      };
+    };
+      
+      //este exercicio fiz 100% sozinha, desde como fazer até como pegar as soluçoes
+  </script>
+
+</body>
+
+</html>
