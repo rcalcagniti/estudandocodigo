@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Exercicio 23 - Awari</title>
+</head>
+
+<body>
+<!--link para exercicio: https://awari.com.br/10-exercicios-divertidos-de-funcoes-em-javascript-para-voce-praticar/ -->
+
+<h3>Exercicio 23</h3>
+<p>Desenvolver uma função que converta um número binário para decimal</p>
+
+<input id="inputNumeroHTML" placeholder="exemplo binario: 0111">
+<button onclick="encontreDecimal ()">Converter</button>
+<p id="resultado"></p>
+<br>
+<br>
+<input id="inputNumeroDecimalHTML" placeholder="exemplo decimal: 23">
+<button onclick="encontreBinario ()">Converter</button>
+<p id="resultado2"></p>
+
+<script>
+  function encontreDecimal () {
+    let inputNumeroJS = parseFloat(document.getElementById("inputNumeroHTML").value);
+    let numeroDecimal = parseInt(inputNumeroJS,2).toString(10);
+    
+    console.log (inputNumeroJS);
+    console.log(numeroDecimal);
+    
+    document.getElementById("resultado").innerHTML = "O número decimal referente é: " + numeroDecimal
+  };
+  
+  /* eu nao tinha a MENOR ideia de como fazer isso, copiei daqui: https://github.com/tomipasin/binarioparadecimal/blob/main/bin2dec.js */
+  
+  function encontreBinario() {
+    let inputNumeroDecimalJS = parseFloat (document.getElementById("inputNumeroDecimalHTML").value)
+    let numeroBinario = parseInt(inputNumeroDecimalJS).toString(2);
+    
+    console.log (inputNumeroDecimalJS);
+    console.log (numeroBinario);
+    document.getElementById("resultado2").innerHTML = "O número binário referente é: " + numeroBinario
+  };
+  
+</script>
+
+</body>
+
+</html>

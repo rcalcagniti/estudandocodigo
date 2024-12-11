@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Exercicio 22 - Awari</title>
+</head>
+
+<body>
+  <!-- https://awari.com.br/10-exercicios-divertidos-de-funcoes-em-javascript-para-voce-praticar/ -->
+  
+  <h3>Exercicio 22 - awari</h3>
+  <p>Criar uma função que receba um número e retorne a soma dos seus dígitos.</p>
+  <input id="inputHTML" placeholder="digite aqui o numero">
+  <button onclick="somarDigitos ()" id="botaoRodarFormula">some os digitos</button>
+  <p id="resultado"></p>
+  
+  <script>
+  
+  let verificarEnter = document.getElementById("inputHTML")
+  verificarEnter.addEventListener('keyup', function (event) {
+    if (event.key === "Enter") {
+      event.preventDefault();
+      document.getElementById("botaoRodarFormula").click()
+    }
+  });
+  
+    function somarDigitos () {
+      let inputJS = document.getElementById("inputHTML").value.split('');
+      console.log (inputJS);
+      let resultado = 0;
+      
+      for (i=0; i<inputJS.length; i++) {
+        resultado += parseFloat(inputJS[i]);
+      }
+      
+      console.log (resultado);
+      
+      document.getElementById("resultado").innerHTML = "A soma dos dígitos é: " + resultado;
+    }
+  </script>
+
+</body>
+
+</html>
