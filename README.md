@@ -5,9 +5,6 @@ I'm a Customer Success Manager for a Software company that is learning coding.<b
 Sou uma Gestora de Projetos em uma empresa de software aprendendo a codar<br>
 <br>
 <br>
-## Find me around the web 🌎: <a href="https://www.linkedin.com/in/rebeka-calcagniti-308820116/"><img align="right" width="150" height="150" src="https://www.linkedin.com/in/rebeka-calcagniti-308820116/"></a>
-<br>
-<br>
 - Sharing updates on <a href="https://www.linkedin.com/in/rebeka-calcagniti-308820116/">LinkedIn</a> 💼
 <br>
 <br>
