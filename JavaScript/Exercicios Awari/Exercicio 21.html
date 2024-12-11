@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Exercicio 21 - Awari</title>
+  <style>
+    .inputDeDados, .resultados, .filtro, .resultadosFiltro {
+      display: grid;
+      grid-template-columns:1fr 1fr;
+    };
+    
+  </style>
+  
+</head>
+
+<body>
+  <!-- link do exercicio: https://awari.com.br/10-exercicios-divertidos-de-funcoes-em-javascript-para-voce-praticar/ -->
+  
+  <h3>Exercicio 21 - Awari</h3>
+  <p>Criar uma função que receba uma data como parâmetro e retorne o dia da semana correspondente.</p>
+  
+  <div class="inputDeDados">
+    <div class="inputNumeros">
+      <input id="inputNumerosHTML" placeholder="digite um numero aqui">
+      <button id="rodarFuncaoNumeros" onclick="adicionarNumeroALista ()">adicione Numero a Lista</button>
+    </div>
+    <div class="inputTexto">
+      <input id="inputTextoHTML" placeholder="digite uma palavra aqui">
+      <button id="rodarFuncaoPalavras" onclick="adicionarPalavrasALista()">adicione a palavra a Lista</button>
+    </div>
+  </div>
+  
+  <div class="resultados">
+    <div>
+    <p id="headerListaNumeros"></p>
+    <p id="listaNumeros"></p>
+    </div>
+    
+    <div>
+    <p id="headerListaPalavras"></p>
+    <p id="listaPalavras"></p>
+    </div>
+  </div>
+  
+  <div class="filtro">
+    <div>
+      <p>selecione como deseja organizar: </p>
+      <select id="filtroNumeroHTML">
+        <option value="menorAMaior">Menor a Maior</option>
+        <option value="maiorAMenor">Maior a Menor</option>
+      </select>
+      <button onclick="organizarListaNumeros()">Organizar</button>
+    </div>
+    <div>
+      <p>selecione como deseja organizar: </p>
+      <select id="filtroPalavraHTML">
+        <option value="AZ">A-Z</option>
+        <option value="ZA">Z-A</option>
+      </select>
+      <button onclick="organizarListaPalavras()">Organizar</button>
+      
+    </div>
+  </div>
+  
+    <div class="resultadosFiltro">
+    <div>
+      <p id="headerListaNumerosFiltro"></p>
+      <p id="listaNumerosFiltro"></p>
+    </div>
+
+    <div>
+      <p id="headerListaPalavrasFiltro"></p>
+      <p id="listaPalavrasFiltro"></p>
+    </div>
+  </div>
+  
+ 
+<script>
+  function adicionarNumeroALista () {
+    let inputNumerosJS = document.getElementById("inputNumerosHTML").value;
+    
+    document.getElementById("headerListaNumeros").innerHTML="Lista de números: "
+    document.getElementById("listaNumeros").innerHTML += inputNumerosJS + "<br>"
+  };
+  
+  function adicionarPalavrasALista () {
+    let inputTextoJS = document.getElementById("inputTextoHTML").value;
+
+    document.getElementById("headerListaPalavras").innerHTML = "Lista de palavras: "
+    document.getElementById("listaPalavras").innerHTML += inputTextoJS + "<br>"
+  };
+  
+  function organizarListaNumeros () {
+    let filtroNumero = document.getElementById("filtroNumeroHTML").value;
+    let listaNumeroJS = document.getElementById("listaNumeros").innerHTML.split("<br>");
+    console.log(listaNumeroJS);
+  
+    
+    if (filtroNumero == "menorAMaior") {
+      listaNumeroJS.sort (function(a,b) {return a-b})
+      document.getElementById("headerListaNumerosFiltro").innerHTML="Lista de números organizado é: "
+      for (i=0;i<listaNumeroJS.length; i++) {
+        document.getElementById("listaNumerosFiltro").innerHTML += listaNumeroJS[i] + "<br>"
+      }
+    }
+      
+      else if (filtroNumero == "maiorAMenor") {
+        listaNumeroJS.sort (function(a,b) {return b-a})
+        document.getElementById("headerListaNumerosFiltro").innerHTML="Lista de números organizado é: "
+        for (i = 0; i < listaNumeroJS.length; i++) {
+          document.getElementById("listaNumerosFiltro").innerHTML += listaNumeroJS[i] + "<br>"
+         }
+      }
+    };
+    
+    function organizarListaPalavras () {
+    let filtroPalavras = document.getElementById("filtroPalavraHTML").value;
+    let listaPalavrasJS = document.getElementById("listaPalavras").innerHTML.split("<br>");
+    console.log(listaPalavrasJS);
+  
+    
+    if (filtroPalavras == "AZ") {
+      listaPalavrasJS.sort ()
+      document.getElementById("headerListaPalavrasFiltro").innerHTML="Lista de números organizado é: "
+      for (i=0;i<listaPalavrasJS.length; i++) {
+        document.getElementById("listaPalavrasFiltro").innerHTML += listaPalavrasJS[i] + "<br>"
+      }
+    }
+      
+      else if (filtroPalavras == "ZA") {
+        listaPalavrasJS.sort().reverse();
+        document.getElementById("headerListaPalavrasFiltro").innerHTML="Lista de números organizado é: "
+        for (i = 0; i < listaPalavrasJS.length; i++) {
+          document.getElementById("listaPalavrasFiltro").innerHTML += listaPalavrasJS[i] + "<br>"
+         }
+      }
+      
+      
+    }
+  
+</script>
+
+</body>
+
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Exercicio 19 - Awari</title>
+</head>
+
+<body>
+  <!--link do exercicio: https://awari.com.br/10-exercicios-divertidos-de-funcoes-em-javascript-para-voce-praticar/ -->
+  
+  <h3>Exercicio 19 - Awari</h3>
+  <p>Implementar uma função que receba um texto e retorne o número de palavras presentes nele.</p>
+  
+  <textarea id="textoHTML" placeholder="digite o seu texto" cols="31" rows="5"></textarea>
+  <!--voltei no projeto de pg-de-contato para lembrar como colocar box de texto -->
+  <br>
+  <button id="botaoRodarFormula" onclick="contarPalavras ()">Verifique quantas palabras há no texto</button>
+  
+  <p id="resultado"></p>
+  
+  <script>
+    /*não faz sentido colocar um eventlistener no box de texto, porque o texto pode ter quebra de linhas
+    let verificarEnter = document.getElementById("textoHTML");
+    verificarEnter.addEventListener('keyup', function (event){
+      if (event.key === "Enter") {
+        event.preventDefault();
+        document.getElementById("botaoRodarFormula").click()
+      }
+    });
+    */
+  
+    function contarPalavras () {
+      let textoJS = document.getElementById("textoHTML").value;
+      let textoArrayJS = textoJS.split(' ');
+      console.log(textoArrayJS.length);
+      
+      document.getElementById("resultado").innerHTML = "O seu texto contem: " + textoArrayJS.length + " palavras"
+    }
+  </script>
+
+</body>
+
+</html>

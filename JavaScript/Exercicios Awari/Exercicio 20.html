@@ -1,0 +1,50 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Exercicio 20 - Awari </title>
+</head>
+
+<body>
+  <!--link to exercicio: https://awari.com.br/10-exercicios-divertidos-de-funcoes-em-javascript-para-voce-praticar/ -->
+  
+  <h3>Exercicio 20 - html</h3>
+  <p>Criar uma função que receba uma data como parâmetro e retorne o dia da semana correspondente.</p>
+  
+  <input type="date" id="inputDateHTML">
+  <br>
+  <button onclick="verificarDataSemana ()" id="botaoRodarFuncao">Verifique o dia da semana</button>
+  <br>
+  <p id="resultado"></p>
+  
+  <script>
+    
+    function verificarDataSemana () {
+      const diaSemana = ["domingo", "segunda", "terça", "quarta", "quinta", "sexta", "sabado"]
+      let inputDateJS = (document.getElementById("inputDateHTML").value).split('-');
+      //nao consigo fazer o javascript entender isso como data para usar o getDay()
+      
+     const verificarDataSemana = new Date (inputDateJS[0], inputDateJS[1]-1, inputDateJS[2]);
+      //a ideia de separa e depois consultar por valores veio daqui: https://pt.stackoverflow.com/questions/129962/retornar-o-dia-da-semana-em-javascript
+      const verificarDiaDaSemana = verificarDataSemana.getDay();
+      //peguei o getDay() dos estudo de JS
+  
+      console.log(inputDateJS);
+      console.log (verificarDataSemana);
+      console.log (verificarDiaDaSemana);
+      
+      let resultadoDiaDaSemana = diaSemana[verificarDiaDaSemana];
+      console.log (resultadoDiaDaSemana);
+      
+      document.getElementById("resultado").innerHTML = "O dia da semana era: " + resultadoDiaDaSemana;
+      
+    }
+    
+  </script>
+
+</body>
+
+</html>
