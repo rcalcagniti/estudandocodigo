@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Exercicio 25 -Awari</title>
+</head>
+
+<body>
+  <!-- link: https://awari.com.br/10-exercicios-divertidos-de-funcoes-em-javascript-para-voce-praticar/ -->
+  
+  <h3>Exercicio 25 - Awari</h3>
+  <p>Crie uma função que receba uma string e retorne a mesma string, mas com as palavras em ordem reversa.</p>
+  
+  <textarea id="campoDeTextoHTML" cols="30" rows="10"></textarea> <br>
+  <button onclick="inverterTexto ()">Inverta o texto</button>
+  
+  <p id="resultado"></p>
+  
+  <script>
+    
+    function inverterTexto () {
+      let campoDeTextoJS = document.getElementById("campoDeTextoHTML").value.split(' ');
+      let textoEmReverse = campoDeTextoJS.reverse();
+      
+      console.log(campoDeTextoJS);
+      console.log(textoEmReverse);
+      
+      for (i=0;i<textoEmReverse.length; i++) {
+        document.getElementById("resultado").innerHTML += textoEmReverse[i] + " ";
+      }
+      
+    }
+    
+  </script>
+
+</body>
+
+</html>

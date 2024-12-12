@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Exercicio 24 - Awari</title>
+</head>
+
+<body>
+<!--link do exercicio: https://awari.com.br/10-exercicios-divertidos-de-funcoes-em-javascript-para-voce-praticar/ -->
+
+<h3>Exercicio 24 - Awari</h3>
+<p>Implemente uma função que retorne a soma de todos os números pares em um array</p>
+
+<input id="inputHTML">
+<button onclick="someOsPares ()" id="botaoRodarFuncao">Some os Pares</button>
+<p id="resultado"></p>
+
+<script>
+  let verificarEnter = document.getElementById("inputHTML");
+  verificarEnter.addEventListener('keyup', function (event) {
+    if (event.key === "Enter") {
+      event.preventDefault();
+      document.getElementById("botaoRodarFuncao").click()
+    }
+  });
+  
+  function someOsPares () {
+    let inputJS = document.getElementById('inputHTML').value.split('');
+    let somaPares = 0;
+    
+    console.log(inputJS);
+    
+    for (i=0; i<inputJS.length; i++) {
+      if (inputJS[i] % 2 == 0) {
+        somaPares += Number(inputJS[i]);
+      }
+    }
+    
+    console.log (somaPares);
+    
+    document.getElementById("resultado").innerHTML = "O valor da soma dos pares é: " + somaPares;
+    
+  }
+</script>
+
+
+</body>
+
+</html>
