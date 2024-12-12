@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Exercicio 26 - Awari</title>
+</head>
+
+<body>
+  <!-- link do exercicio:  https://awari.com.br/10-exercicios-divertidos-de-funcoes-em-javascript-para-voce-praticar/ -->
+  
+  <h3>Exercicio 26 - Awari</h3>
+  <p>Implemente uma função que retorne a quantidade de vogais em uma string.</p>
+  
+  <textarea name="" id="inputTextoHTML" cols="20" rows="8"></textarea> <br>
+  <button onclick="contarVogais ()">conte as vogais do seu texto</button>
+  
+  <p id="resultado"></p>
+  
+  <script>
+    
+    function contarVogais () {
+      const vogais = /[aeiou]/gi
+      // se nao tem esse /gi no final, o inputTextomatch(vogais) para de verificar na primeira letra vogal que entrontra
+      //link que me mostrou sobre i /gi: https://github.com/bosontreinamentos/javascript/blob/main/ContarVogaisJavaScript.html
+      
+      let inputTextoJS = document.getElementById("inputTextoHTML").value.toLowerCase()
+      let totalVogais = 0;
+      
+      
+      /* eu pensei que precisava fazer um split("") no inputTextoJS, para separar por letra e depois fazer o match, mas o match ja consegue fazer direto
+      for (i=0;i<inputTextoJS; i++) {
+        if (inputTextoJS.match(/[aeiou]/gi) != null) {
+          totalVogais ++
+        }
+      }
+      */
+      
+      totalVogais = inputTextoJS.match(vogais).length;
+      
+      console.log (inputTextoJS);
+      console.log (totalVogais);
+      console.log (inputTextoJS.match(/[aeiou]/gi));
+      
+      document.getElementById("resultado").innerHTML = "A quantidade de vogais na sua frase é: " + totalVogais;
+    }
+    
+  </script>
+
+</body>
+
+</html>
