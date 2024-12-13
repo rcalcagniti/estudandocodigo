@@ -26,6 +26,6 @@
     height: 28px;
 }
 
-/*#containerTemperatura, #containerPeso {
+.containerTemperatura, #containerPeso {
     display: none;
-};*/
+};

@@ -9,52 +9,57 @@
 </head>
 
 <body>
-<h2>Projeto Conversor</h3>
-<p>projeto conversor foi inspirado daqui: https://www.geeksforgeeks.org/design-a-unit-converter-using-html-css-and-javascript/</p>
 
-<div class="headerSeletor">
-    <p>Selecione o que deseja converter</p>
-    <select id="selectConversor" class="select">
-      <option value="">selecione</option>
-      <option value="temperatura">Temperatura</option>
-      <option value="peso">Peso</option>
-    </select>
-    <button class="botao" onclick="aparecerElemento()">Próximo</button>
-</div>
-
-<div class="containerTemperatura" id="containerTemperatura">
-    <h3>Converter Temperatura</h3>
-    <input id="inputTemperaturaHTML" placeholder="digite a temperatura" class="inputCSS">
-        <select id="deTemperatura" class="select">
-          <option value="celsius">Celsius</option>
-          <option value="fahrenheit">Fahrenheit</option>
-              </select>
-        <span class="arrow"> <> </span>
-              <select id="paraTemperatura" class="select">
-                  <option value="fahrenheit">Fahrenheit</option>
-                  <option value="celsius">Celsius</option>
-              </select>
-              <button onclick="converterTemperatura ()" class="botao">converta a temperatura</button>
-              <p id="resultadoTemperatura">resultado</p>
-</div>
-<div class="containerPeso" id="containerPeso">
-    <h3>Converter Peso</h3>
-    <input id="inputPesoHTML" placeholder="digite o peso" class="inputCSS">
-        <select id="dePeso" class="select">
-          <option value="gramas">Gramas</option>
-          <option value="kg">KG</option>
-              </select>
-        <span class="arrow"> <> </span>
-              <select id="paraPeso" class="select">
-                  <option value="kg">KG</option>
-                  <option value="gramas">Gramas</option>
-              </select>
-              <button onclick="converterPeso ()" class="botao">converta a peso</button>
-              <p id="resultadoTemperatura">resultado</p>
-</div>
     
     
-    <script src="conversor.js"></script>
+    
+    
+    <h2>Projeto Conversor</h3>
+        <p>projeto conversor foi inspirado daqui: https://www.geeksforgeeks.org/design-a-unit-converter-using-html-css-and-javascript/</p>
+        
+        <div class="headerSeletor">
+            <p>Selecione o que deseja converter</p>
+            <select id="selectConversor" class="select">
+                <option value="">selecione</option>
+                <option value="temperatura">Temperatura</option>
+                <option value="peso">Peso</option>
+            </select>
+            <button class="botao" onclick="aparecerElemento()">Próximo</button>
+        </div>
+        
+        <div class="containerTemperatura" id="containerTemperatura">
+            <h3>Converter Temperatura</h3>
+            <input id="inputTemperaturaHTML" placeholder="digite a temperatura" class="inputCSS">
+                <select id="deTemperatura" class="select">
+                    <option value="celsius">Celsius</option>
+                    <option value="fahrenheit">Fahrenheit</option>
+                </select>
+                <span class="arrow"> <> </span>
+                <select id="paraTemperatura" class="select">
+                    <option value="fahrenheit">Fahrenheit</option>
+                    <option value="celsius">Celsius</option>
+                </select>
+                <button onclick="converterTemperatura ()" class="botao">converta a temperatura</button>
+                <p id="resultadoTemperatura"></p>
+        </div>
+        <div class="containerPeso" id="containerPeso">
+            <h3>Converter Peso</h3>
+            <input id="inputPesoHTML" placeholder="digite o peso" class="inputCSS">
+                <select id="dePeso" class="select">
+                    <option value="gramas">Gramas</option>
+                    <option value="kg">KG</option>
+                </select>
+                <span class="arrow"> <> </span>
+                <select id="paraPeso" class="select">
+                    <option value="kg">KG</option>
+                    <option value="gramas">Gramas</option>
+                </select>
+                <button onclick="converterPeso ()" class="botao">converta a peso</button>
+                <p id="resultadoPeso"></p>
+        </div>
+        
+      <script src="conversor.js"></script>
+
 </body>
 
 </html>
