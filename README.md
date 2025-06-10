@@ -2,6 +2,9 @@
 <br>
 <br>
 I'm a Customer Success Manager for a Software company that is learning coding.<br>
+All of my notes, exercises description and solutions will be in portuguese because I believe most of this you can find in another website in english, but not in portuguese. 
+So the purpose here is to share knowledge with my fellow portuguese speakers that want to lear code but is not fluent in english. <br>
+
 Sou uma Gestora de Projetos em uma empresa de software aprendendo a codar<br>
 <br>
 <br>
